@@ -8,7 +8,7 @@ Tous les exemples s'exécutent tels quels dans [DartPad](https://dartpad.dev).
 
 ---
 
-## Ce qui se transpose sans effort
+## Transposition directe
 
 | Kotlin | Dart |
 |---|---|
@@ -270,7 +270,7 @@ visible, et deux extensions en conflit produisent une erreur qu'il faut lever ex
 
 ---
 
-## Ce qui n'existe pas en Dart
+## Absent de Dart
 
 Utile à savoir pour arrêter de le chercher.
 
