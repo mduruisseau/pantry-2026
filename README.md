@@ -35,6 +35,20 @@ Trois points importants :
   `flutter pub upgrade`. Les versions sont figées : la chaîne de génération de code utilisée par ce
   projet n'accepte qu'une plage restreinte de versions.
 
+## Documents
+
+Lisibles directement sur GitHub, sans rien cloner.
+
+Les liens pointent vers `main` : ils fonctionnent depuis n'importe quelle branche de TP.
+
+| Document | |
+|---|---|
+| [Installation](https://github.com/mduruisseau/pantry-2026/blob/main/docs/installation.md) | complément à la documentation officielle |
+| [Kotlin ↔ Dart](https://github.com/mduruisseau/pantry-2026/blob/main/docs/dart-pour-devs-kotlin.md) | correspondances, pour les premières séances |
+| [Exercices DartPad — séance 1](https://github.com/mduruisseau/pantry-2026/blob/main/docs/seance-01-dart-exercices.md) | |
+
+Les documents des séances suivantes sont ajoutés au fur et à mesure.
+
 ## Comment récupérer un TP
 
 ```bash
