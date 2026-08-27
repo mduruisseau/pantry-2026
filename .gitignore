@@ -1,0 +1,19 @@
+# Flutter / Dart
+.dart_tool/
+build/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+
+# Code genere : regenere par build_runner
+*.g.dart
+*.freezed.dart
+
+# Outillage enseignant, pas destine aux etudiants
+.fvm/
+.fvmrc
+
+# IDE / OS
+.idea/
+*.iml
+.DS_Store
