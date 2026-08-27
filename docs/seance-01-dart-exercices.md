@@ -43,27 +43,32 @@ attrape pas. Le tri demandé impose de séparer avant de concaténer.
 
 ---
 
-## 2. `final` et `const`
+## 2. Ordre d'exécution
 
-Quatre déclarations. Prédire lesquelles compilent **avant** de lancer.
+Dart a **un seul thread** et **deux files d'attente**. Prédire l'ordre d'affichage avant d'exécuter.
 
 ```dart
-void main() {
-  final a = DateTime.now();
-  const b = 3.14;
-  const c = [1, 2, 3];
-  // const d = DateTime.now();
+import 'dart:async';
 
-  const e = [1, 2, 3];
-  print(identical(c, e));   // TODO : prédire avant d'exécuter
+void main() {
+  print('1');
+  Future(() => print('2'));
+  Future.microtask(() => print('3'));
+  scheduleMicrotask(() => print('4'));
+  Future.value().then((_) => print('5'));
+  print('6');
 }
 ```
 
-Décommenter `d` et lire le message d'erreur : il dit exactement ce qui manque.
+Prédiction : ______ ______ ______ ______ ______ ______
 
-**Points d'attention.** `identical` compare les références, pas les valeurs. Le résultat explique
-pourquoi `const` compte en Flutter : deux widgets `const` identiques sont un seul objet, et un
-widget `const` n'est pas reconstruit.
+**Points d'attention.** Le code synchrone s'exécute jusqu'au bout avant toute chose. Ensuite la file
+de **microtasks** est vidée **entièrement**, puis une seule entrée de la file d'**événements** est
+traitée par tour. `Future(...)` alimente la file d'événements ; `.then` sur un `Future` déjà
+complété alimente celle des microtasks.
+
+Conséquence pratique : une microtask qui en planifie une autre indéfiniment bloque la file
+d'événements, donc l'interface. Ce n'est pas théorique — c'est une cause de gel d'application.
 
 ---
 
@@ -96,7 +101,8 @@ Ensuite, retirer le `await` devant `fiche('Nutella')` et observer ce qui s'affic
 n'est levée.** C'est précisément ce qui rend cet oubli difficile à repérer.
 
 **Points d'attention.** Une fonction `async` renvoie toujours un `Future`, même sans `await` dans
-son corps.
+son corps. Un `await` sur un `Future` déjà complété rend lui aussi la main : la suite passe par la
+file de microtasks, elle ne s'exécute pas immédiatement.
 
 ---
 
@@ -220,6 +226,21 @@ d'un `is` suivi d'un accès au champ, en plus court.
 ## Pour aller plus loin
 
 Si les six exercices sont terminés avant la fin du bloc.
+
+**`final` et `const`.** Prédire lesquelles de ces déclarations compilent, puis vérifier.
+
+```dart
+final a = DateTime.now();
+const b = 3.14;
+const c = [1, 2, 3];
+// const d = DateTime.now();
+
+const e = [1, 2, 3];
+print(identical(c, e));   // prédire avant d'exécuter
+```
+
+`identical` compare les références. Le résultat explique pourquoi `const` compte en Flutter : deux
+widgets `const` identiques sont un seul objet, et un widget `const` n'est pas reconstruit.
 
 **Record.** Écrire une fonction renvoyant à la fois le minimum, le maximum et la moyenne d'une
 `List<int>`, sans déclarer de classe.
