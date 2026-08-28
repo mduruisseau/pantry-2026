@@ -1,9 +1,9 @@
-# Pantry — fil rouge du cours Flutter
+# Pantry · fil rouge du cours Flutter
 
 Application de gestion de garde-manger, construite séance après séance pendant le module Flutter
 du M2 informatique. Ce dépôt sert les **points de départ et les corrigés des TP**.
 
-## Version du SDK — épinglée pour l'année
+## Version du SDK · épinglée pour l'année
 
 **Flutter 3.47.1** (Dart 3.13.1). Installation par l'**archive officielle**, en suivant
 [docs.flutter.dev/get-started/install](https://docs.flutter.dev/get-started/install), chemin de
@@ -45,7 +45,7 @@ Les liens pointent vers `main` : ils fonctionnent depuis n'importe quelle branch
 |---|---|
 | [Installation](https://github.com/mduruisseau/pantry-2026/blob/main/docs/installation.md) | complément à la documentation officielle |
 | [Kotlin ↔ Dart](https://github.com/mduruisseau/pantry-2026/blob/main/docs/dart-pour-devs-kotlin.md) | correspondances, pour les premières séances |
-| [Exercices DartPad — séance 1](https://github.com/mduruisseau/pantry-2026/blob/main/docs/seance-01-dart-exercices.md) | |
+| [Exercices DartPad · séance 1](https://github.com/mduruisseau/pantry-2026/blob/main/docs/seance-01-dart-exercices.md) | |
 
 Les documents des séances suivantes sont ajoutés au fur et à mesure.
 
@@ -86,7 +86,7 @@ déclenche alors aucun téléchargement, et `flutter pub get` est immédiat.
 
 | Branche | Contenu | Publiée |
 |---|---|---|
-| `main` | ce README, rien d'autre | — |
+| `main` | ce README, rien d'autre | · |
 | `session-NN-start` | point de départ du TP de la séance NN | avant la séance |
 | `session-NN-solution` | corrigé | après la séance |
 | `session-06-getit-manuel` | état intermédiaire du TP 1 de la séance 6 | séance 6 |

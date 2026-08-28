@@ -53,7 +53,7 @@ late final String valeur = calculCouteux();  // calculCouteux() n'est appelé
                                              // qu'au premier accès
 ```
 
-**Type promotion.** Comme Kotlin, Dart promeut après un test — mais uniquement sur les variables
+**Type promotion.** Comme Kotlin, Dart promeut après un test, mais uniquement sur les variables
 locales, jamais sur les champs d'instance.
 
 ```dart
@@ -186,7 +186,7 @@ class Produit {
 - Les paramètres **nommés** sont entre accolades, les **positionnels optionnels** entre crochets.
 - Pas de `new`.
 
-**Constructeurs nommés et `factory`** — Kotlin utilise des fonctions de compagnon, Dart les intègre :
+**Constructeurs nommés et `factory`**, Kotlin utilise des fonctions de compagnon, Dart les intègre :
 
 ```dart
 class Produit {
@@ -228,7 +228,7 @@ String decrire(Resultat r) => switch (r) {
 ```
 
 Le compilateur signale une erreur si un cas manque. **C'est la structure qui servira à modéliser
-les quatre états d'interface** — chargement, données, erreur, vide — à partir de la séance 4.
+les quatre états d'interface** (chargement, données, erreur, vide) à partir de la séance 4.
 
 `Succes(:final donnees)` déstructure au passage : équivalent de `is Succes -> r.donnees` en Kotlin,
 en plus court.
