@@ -1,4 +1,4 @@
-# Séance 2 — Devine le rendu
+# Séance 2 · Devine le rendu
 
 Six extraits de mise en page. Pour chacun : **écrire sa prédiction avant d'exécuter**, puis coller
 le code dans [DartPad](https://dartpad.dev) et comparer.
@@ -129,7 +129,7 @@ Prédiction : rendu normal, rendu partiel, ou erreur ? ______
 
 *À lire après avoir exécuté les six extraits.*
 
-## A — la contrainte du parent l'emporte
+## A · la contrainte du parent l'emporte
 
 **Largeur obtenue : 100 px**, pas 300.
 
@@ -140,7 +140,7 @@ ignorée sans le moindre avertissement.
 C'est la première moitié de la règle : *les contraintes descendent*. Un enfant ne peut jamais sortir
 des bornes que son parent lui impose.
 
-## B — viewport de hauteur unbounded
+## B · viewport de hauteur unbounded
 
 ```
 Vertical viewport was given unbounded height.
@@ -154,11 +154,11 @@ Trois solutions, par ordre de préférence :
 
 | Solution | Effet |
 |---|---|
-| `Expanded` autour du `ListView` | lui donne la hauteur restante — le cas courant |
+| `Expanded` autour du `ListView` | lui donne la hauteur restante · le cas courant |
 | `SizedBox(height: …)` | hauteur fixe, quand elle est connue |
 | `shrinkWrap: true` | le `ListView` se dimensionne à son contenu, **en construisant tous ses enfants** : il perd son intérêt sur une longue liste |
 
-## C — `flex` répartit l'espace restant
+## C · `flex` répartit l'espace restant
 
 **300 px et 600 px** sur une fenêtre de 900.
 
@@ -167,26 +167,26 @@ réparti au prorata des `flex`, ici 1 et 2. La largeur demandée par les enfants
 
 `Flexible` fait la même répartition mais avec une contrainte **loose** : l'enfant peut prendre moins.
 
-## D — `mainAxisSize` vaut `max` par défaut
+## D · `mainAxisSize` vaut `max` par défaut
 
 **Hauteur obtenue : celle de l'écran**, alors que la `Column` ne contient que deux lignes de texte.
 
 `Center` transmet une contrainte loose : de zéro à la hauteur disponible. La `Column`, dont
 `mainAxisSize` vaut `max` par défaut, prend tout ce qu'on lui accorde.
 
-Avec `mainAxisSize: MainAxisSize.min`, la hauteur tombe à **40 px** — la somme de ses enfants.
+Avec `mainAxisSize: MainAxisSize.min`, la hauteur tombe à **40 px**, la somme de ses enfants.
 
 C'est la seconde moitié de la règle : *les tailles remontent*. La `Column` choisit sa taille dans
 les bornes reçues, et ce choix dépend d'un paramètre qu'on oublie de lire.
 
-## E — `Expanded` n'a de sens que dans un `Flex`
+## E · `Expanded` n'a de sens que dans un `Flex`
 
 ```
 Incorrect use of ParentDataWidget.
 ```
 
 `Expanded` ne dessine rien : il **annote** son enfant à l'intention du parent, pour lui indiquer
-comment répartir l'espace. Seuls `Row` et `Column` — les `Flex` — savent lire cette annotation. Un
+comment répartir l'espace. Seuls `Row` et `Column` (les `Flex`) savent lire cette annotation. Un
 `Stack` positionne ses enfants tout autrement et ne sait pas quoi en faire.
 
 Dans un `Stack`, l'équivalent est `Positioned`, qui est l'annotation que celui-ci comprend.
@@ -194,7 +194,7 @@ Dans un `Stack`, l'équivalent est `Positioned`, qui est l'annotation que celui-
 Le message d'erreur nomme le parent attendu. Le lire fait gagner du temps : il désigne le **parent
 immédiat**, pas un ancêtre lointain.
 
-## F — le débordement se peint, il n'interrompt pas
+## F · le débordement se peint sans interrompre
 
 ```
 A RenderFlex overflowed by 393 pixels on the right.
@@ -211,8 +211,8 @@ Retenir la distinction :
 
 | Symptôme | Nature |
 |---|---|
-| rayures jaunes et noires | dépassement — l'application tourne, la mise en page est fausse |
-| écran rouge, exception | contrainte impossible — le rendu s'arrête |
+| rayures jaunes et noires | dépassement · l'application tourne, la mise en page est fausse |
+| écran rouge, exception | contrainte impossible · le rendu s'arrête |
 
 ---
 

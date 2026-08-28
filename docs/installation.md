@@ -1,4 +1,4 @@
-# Installation de Flutter — addendum
+# Installation de Flutter · addendum
 
 Ce document ne remplace pas la documentation officielle, il la complète.
 
@@ -16,19 +16,19 @@ https://storage.googleapis.com/flutter_infra_release/releases/stable/linux/flutt
 
 Environ 1,6 Go.
 
-## Installation par archive, jamais par `git clone`
+## Installation par archive et non par `git clone`
 
 La documentation officielle propose les deux méthodes. **Utiliser l'archive.**
 
 Le clone échoue sur les postes de la faculté : l'historique du dépôt Flutter est volumineux, et un
-clone superficiel empêche le SDK de déterminer sa propre version — `flutter --version` renvoie alors
+clone superficiel empêche le SDK de déterminer sa propre version, `flutter --version` renvoie alors
 `0.0.0-unknown` et `flutter doctor` se comporte de façon incohérente.
 
 Conséquence à connaître : **`flutter upgrade` ne fonctionne pas** avec une installation par archive.
 C'est voulu. La version est gelée pour que tous les postes exécutent la même, et une mise à jour en
 cours de semestre casserait la chaîne de génération de code du projet.
 
-## Extraction et `PATH`, sans droits administrateur
+## Extraction et `PATH` sans droits administrateur
 
 ```bash
 cd ~
@@ -71,7 +71,7 @@ lignes suivantes sont **sans conséquence** pour les séances 1 à 7 :
 
 | Ligne | Statut |
 |---|---|
-| `Android toolchain` | présente sur les postes de la salle, souvent absente sur une machine personnelle — sans effet avant la séance 8 |
+| `Android toolchain` | présente sur les postes de la salle, souvent absente sur une machine personnelle · sans effet avant la séance 8 |
 | `Android licenses` non acceptées | sans effet avant la séance 8 |
 | `Linux toolchain` (clang, CMake, ninja, GTK) incomplète | la cible desktop est optionnelle |
 | `Android Studio` absent | non utilisé, VS Code suffit |

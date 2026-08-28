@@ -1,4 +1,4 @@
-# Séance 1 — Dart sur DartPad
+# Séance 1 · Dart sur DartPad
 
 Six exercices courts, à faire dans l'ordre sur [dartpad.dev](https://dartpad.dev). Rien à installer :
 DartPad tourne dans le navigateur, et fonctionne donc même si l'installation de Flutter n'est pas
@@ -8,7 +8,7 @@ Compter cinq à dix minutes par exercice. Les correspondances Kotlin ↔ Dart so
 `dart-pour-devs-kotlin.md`, à garder ouvert dans un onglet.
 
 Les exercices non terminés pendant le bloc peuvent l'être ensuite : le codelab qui suit est
-auto-rythmé. **L'exercice 6 est celui à ne pas sauter** — sa structure sert de la séance 4 jusqu'à
+auto-rythmé. **L'exercice 6 est celui à ne pas sauter**, sa structure sert de la séance 4 jusqu'à
 la fin du cours.
 
 Pour chaque exercice : le squelette est fourni, la sortie attendue est donnée. Remplacer les `TODO`.
@@ -68,7 +68,7 @@ traitée par tour. `Future(...)` alimente la file d'événements ; `.then` sur u
 complété alimente celle des microtasks.
 
 Conséquence pratique : une microtask qui en planifie une autre indéfiniment bloque la file
-d'événements, donc l'interface. Ce n'est pas théorique — c'est une cause de gel d'application.
+d'événements, donc l'interface. Ce n'est pas théorique, c'est une cause de gel d'application.
 
 ---
 
@@ -218,7 +218,7 @@ Une fois que cela fonctionne, **retirer le cas `Vide`** et lire l'erreur de comp
 propriété la plus utile de cette construction : un état ajouté au modèle ne peut pas être oublié
 dans l'interface.
 
-**Points d'attention.** Le motif `Donnees(:final produits)` déstructure directement — équivalent
+**Points d'attention.** Le motif `Donnees(:final produits)` déstructure directement, équivalent
 d'un `is` suivi d'un accès au champ, en plus court.
 
 ---
