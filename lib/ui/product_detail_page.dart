@@ -1,15 +1,20 @@
 import 'package:flutter/material.dart';
 
 import 'package:pantry/models/product.dart';
+import 'package:pantry/theme/pantry_tokens.dart';
 import 'package:pantry/ui/widgets/detail_section.dart';
+import 'package:pantry/ui/widgets/expiry_label.dart';
+import 'package:pantry/ui/widgets/nutri_score_gauge.dart';
 import 'package:pantry/ui/widgets/nutri_score_scale.dart';
 import 'package:pantry/ui/widgets/product_image_placeholder.dart';
+import 'package:pantry/ui/widgets/product_list_tile.dart';
 
 /// Écran « fiche produit », conforme à `design/fiche-produit.svg`.
 ///
-/// Corrigé de la séance 2, à un détail près : le sélecteur de produit de la
-/// barre supérieure a disparu. La fiche est désormais atteinte depuis la liste,
-/// avec le code-barres pour paramètre de route.
+/// La fiche est atteinte depuis la liste, avec le code-barres pour paramètre
+/// de route. Trois ajouts par rapport à la séance 2 : la vignette est
+/// l'arrivée d'une transition `Hero`, la date de péremption passe par
+/// [ExpiryLabel], et les espacements viennent des tokens du thème.
 ///
 /// Le point structurant de cet écran n'est pas la mise en page mais le
 /// traitement des champs absents : chaque bloc décide de s'afficher, de se
@@ -21,6 +26,8 @@ class ProductDetailPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final tokens = Theme.of(context).extension<PantryTokens>()!;
+
     return Scaffold(
       appBar: AppBar(title: const Text('Fiche produit')),
       // ListView plutôt que Column : la fiche doit défiler dès que la fenêtre
@@ -34,7 +41,14 @@ class ProductDetailPage extends StatelessWidget {
             title: 'Nutri-Score',
             child: product.nutriScore == null
                 ? const MissingValue('Non évalué')
-                : NutriScoreScale(grade: product.nutriScore),
+                : Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      NutriScoreScale(grade: product.nutriScore),
+                      const SizedBox(height: 16),
+                      NutriScoreGauge(grade: product.nutriScore!),
+                    ],
+                  ),
           ),
           const _SectionDivider(),
           DetailSection(
@@ -60,28 +74,19 @@ class ProductDetailPage extends StatelessWidget {
                   ?.copyWith(fontFamily: 'monospace'),
             ),
           ),
-          const SizedBox(height: 24),
+          SizedBox(height: tokens.sectionGap),
           DetailSection(
             title: 'Péremption',
             child: product.expiresOn == null
                 ? const MissingValue('Non renseignée')
-                : Text(_formatDate(product.expiresOn!)),
+                : ExpiryLabel(expiresOn: product.expiresOn!),
           ),
-          const SizedBox(height: 24),
+          SizedBox(height: tokens.sectionGap),
         ],
       ),
     );
   }
 
-  /// Formatage manuel, volontairement.
-  ///
-  /// Le paquet `intl` formaterait la date selon la locale, sujet de la
-  /// séance 10.
-  String _formatDate(DateTime date) {
-    final d = date.day.toString().padLeft(2, '0');
-    final m = date.month.toString().padLeft(2, '0');
-    return '$d/$m/${date.year}';
-  }
 }
 
 class _Header extends StatelessWidget {
@@ -96,7 +101,13 @@ class _Header extends StatelessWidget {
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        ProductImagePlaceholder(initial: product.initial),
+        // Départ et arrivée de la transition partagent le même tag. Flutter
+        // interpole la position et la taille entre les deux écrans ; ici, la
+        // vignette passe de 48 à 96 px.
+        Hero(
+          tag: ProductListTile.heroTag(product.barcode),
+          child: ProductImagePlaceholder(initial: product.initial),
+        ),
         const SizedBox(width: 16),
         // Expanded est indispensable : sans lui, la Column reçoit une
         // contrainte de largeur non bornée et le nom long déborde au lieu
@@ -138,16 +149,21 @@ class _Header extends StatelessWidget {
   }
 }
 
-/// Séparateur de section, avec les 24 px imposés de part et d'autre.
+/// Séparateur de section, avec l'espacement du thème de part et d'autre.
+///
+/// La hauteur totale vaut deux espacements plus l'épaisseur du trait : la
+/// valeur de la maquette n'est plus écrite ici, elle vient du token.
 class _SectionDivider extends StatelessWidget {
   const _SectionDivider();
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final tokens = theme.extension<PantryTokens>()!;
     return Divider(
-      height: 49,
+      height: tokens.sectionGap * 2 + 1,
       thickness: 1,
-      color: Theme.of(context).colorScheme.outlineVariant,
+      color: theme.colorScheme.outlineVariant,
     );
   }
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 import 'package:pantry/models/product.dart';
 
@@ -12,13 +13,11 @@ import 'package:pantry/models/product.dart';
 /// compte, l'erreur s'affiche au même endroit que les autres, et `reset()` la
 /// remet à zéro comme le reste.
 ///
-/// La branche de départ ne fournissait que `onSubmitted` et un `Scaffold`
-/// vide : tout ce qui suit relevait de l'exercice.
+/// L'écran ne connaît plus son appelant : il **renvoie** le produit saisi par
+/// `pop`, et c'est la liste qui l'ajoute au stock. Le callback `onSubmitted` de
+/// la séance 2 a disparu avec la navigation par onglets.
 class AddProductPage extends StatefulWidget {
-  const AddProductPage({required this.onSubmitted, super.key});
-
-  /// Appelé avec le produit saisi quand le formulaire est valide.
-  final ValueChanged<Product> onSubmitted;
+  const AddProductPage({super.key});
 
   @override
   State<AddProductPage> createState() => _AddProductPageState();
@@ -113,20 +112,16 @@ class _AddProductPageState extends State<AddProductPage> {
     }
 
     final quantity = _quantityController.text.trim();
-    widget.onSubmitted(
-      Product(
-        barcode: _barcodeController.text.trim(),
-        name: _nameController.text.trim(),
-        quantity: quantity.isEmpty ? null : quantity,
-        expiresOn: _expiresOn,
-      ),
+    final product = Product(
+      barcode: _barcodeController.text.trim(),
+      name: _nameController.text.trim(),
+      quantity: quantity.isEmpty ? null : quantity,
+      expiresOn: _expiresOn,
     );
 
-    _formKey.currentState?.reset();
-    _barcodeController.clear();
-    _nameController.clear();
-    _quantityController.clear();
-    setState(() => _expiresOn = null);
+    // La valeur passée à `pop` est celle que reçoit le `push` de la liste.
+    // L'écran disparaissant, il n'y a plus rien à remettre à zéro.
+    context.pop(product);
   }
 
   @override

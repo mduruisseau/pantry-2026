@@ -1,21 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
-import 'package:pantry/data/mock_products.dart';
-import 'package:pantry/models/product.dart';
-import 'package:pantry/ui/stock_page.dart';
+import 'package:pantry/data/stock_scope.dart';
+import 'package:pantry/router.dart';
+import 'package:pantry/theme/pantry_theme.dart';
+import 'package:pantry/theme/theme_mode_scope.dart';
 
 void main() => runApp(const PantryApp());
 
-/// Racine de l'application, et dépositaire du stock.
+/// Racine de l'application.
 ///
-/// Le stock est porté ici parce que trois écrans en dépendent : la liste
-/// l'affiche, la fiche en lit un élément, le formulaire y ajoute. Un `State`
-/// placé plus bas ne serait pas visible des deux autres écrans.
+/// Trois enveloppes, et rien d'autre : `StockScope` porte le stock et le rend
+/// lisible depuis n'importe quel écran, `ThemeModeScope` porte le mode choisi
+/// (exercice bonus), `MaterialApp.router` porte les thèmes et la table de
+/// routage.
 ///
-/// `addProduct` et `removeProduct` sont le **contrat** de la séance : la liste
-/// reçoit le stock et `removeProduct`, le formulaire produit un `Product` qui
-/// aboutit à `addProduct`. La façon de les faire descendre jusqu'aux écrans
-/// fait partie du TP.
+/// L'ordre compte. Les deux portées sont **au-dessus** de
+/// `MaterialApp.router` : les écrans construits par le routeur doivent les
+/// voir depuis leur contexte.
 ///
 /// Aucune donnée n'est persistée : le stock repart des produits mockés à
 /// chaque rechargement. La persistance est le sujet de la séance 7.
@@ -27,49 +29,31 @@ class PantryApp extends StatefulWidget {
 }
 
 class _PantryAppState extends State<PantryApp> {
-  late List<Product> _products = List.of(mockProducts);
-
-  /// Ajoute un produit au stock, ou remplace celui qui porte le même
-  /// code-barres.
+  /// Le routeur est construit **une seule fois**.
   ///
-  /// Le code-barres est l'identité d'un produit : deux exemplaires du même
-  /// article ne forment qu'une entrée. Cette règle est ce qui autorise
-  /// `ValueKey(product.barcode)` dans la liste.
-  void addProduct(Product product) {
-    setState(() {
-      final index = _products.indexWhere((p) => p.barcode == product.barcode);
-      _products = index == -1
-          ? [..._products, product]
-          : [
-              ..._products.sublist(0, index),
-              product,
-              ..._products.sublist(index + 1),
-            ];
-    });
-  }
-
-  void removeProduct(String barcode) {
-    setState(() {
-      _products = _products.where((p) => p.barcode != barcode).toList();
-    });
-  }
+  /// Le reconstruire à chaque build réinitialiserait la pile de navigation :
+  /// l'écran courant reviendrait à la liste au moindre changement de stock.
+  late final GoRouter _router = createRouter();
 
   @override
   Widget build(BuildContext context) {
-    // TODO(tp-03): remplacer `MaterialApp` par `MaterialApp.router` et
-    // déclarer les trois routes de l'énoncé. Le thème part dans `lib/theme/`
-    // à l'exercice 2.
-    return MaterialApp(
-      title: 'Pantry',
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xFF3F7D58)),
-        useMaterial3: true,
-      ),
-      home: StockPage(
-        products: _products,
-        onProductAdded: addProduct,
-        onProductRemoved: removeProduct,
+    return StockScope(
+      child: ThemeModeScope(
+        // `Builder` fournit un contexte situé sous `ThemeModeScope` : celui de
+        // cette méthode est au-dessus, et n'y verrait aucune portée.
+        child: Builder(
+          builder: (context) => MaterialApp.router(
+            title: 'Pantry',
+            debugShowCheckedModeBanner: false,
+            theme: PantryTheme.light,
+            darkTheme: PantryTheme.dark,
+            // `ThemeMode.system` tant que rien n'est choisi dans le menu : le
+            // réglage de l'appareil décide. Rien d'autre à écrire, puisque les
+            // widgets ne citent aucune couleur et lisent des color roles.
+            themeMode: ThemeModeScope.of(context).value,
+            routerConfig: _router,
+          ),
+        ),
       ),
     );
   }
