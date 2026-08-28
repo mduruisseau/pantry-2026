@@ -1,0 +1,43 @@
+{
+  "code": "3168930010265",
+  "product": {
+    "brands": "PEPSICO FRANCE",
+    "categories_tags_fr": [
+      "Aliments et boissons à base de végétaux",
+      "Aliments d'origine végétale",
+      "Petit-déjeuners",
+      "Céréales et pommes de terre",
+      "Céréales et dérivés",
+      "Céréales pour petit-déjeuner",
+      "mueslis",
+      "Céréales aux fruits à coques",
+      "Pépites de céréales croustillantes",
+      "Pépites de céréales aux fruits à coques"
+    ],
+    "code": "3168930010265",
+    "generic_name_fr": "Pépites de céréales croustillantes avec Mélange de Noix",
+    "image_front_small_url": "https://images.openfoodfacts.org/images/products/316/893/001/0265/front_fr.259.200.jpg",
+    "image_front_url": "https://images.openfoodfacts.org/images/products/316/893/001/0265/front_fr.259.400.jpg",
+    "ingredients_text_fr": "_avoine_ complète (32%), _blé_ complet (18%), sirop de glucose, huile de tournesol, sucre, _amandes_ grillées (4,2%), _noisettes_ (4%), oligofructose, _noix de Pécan_ (1,5%), farine de _blé_, farine de riz, _noix du Brésil_ (1%), miel, arômes naturels, antioxydant (tocophérol).",
+    "labels_tags_fr": [
+      "Sans arômes artificiels",
+      "Sans colorants",
+      "Sans huile de palme",
+      "Sans conservateurs",
+      "en:Nutriscore",
+      "Point Vert",
+      "en:Nutriscore Grade A",
+      "Triman"
+    ],
+    "last_modified_t": 1790707783,
+    "nova_group": 4,
+    "nutriments": {},
+    "nutriscore_grade": "b",
+    "product_name": "cruesly mélange de noix",
+    "product_name_fr": "cruesly mélange de noix",
+    "product_quantity": 450.0,
+    "quantity": "450 g"
+  },
+  "status": 1,
+  "status_verbose": "product found"
+}

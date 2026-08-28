@@ -1,0 +1,44 @@
+{
+  "code": "3760049798609",
+  "product": {
+    "brands": "La Boulangere, La Boulangère, La boulangere",
+    "categories_tags_fr": [
+      "Aliments et boissons à base de végétaux",
+      "Aliments d'origine végétale",
+      "Céréales et pommes de terre",
+      "Céréales et dérivés",
+      "Pains",
+      "Pains de mie",
+      "en:Packaged breads"
+    ],
+    "code": "3760049798609",
+    "generic_name_fr": "Pain de mie tranché aux graines de lin et tournesol et à la farine de seigle",
+    "image_front_small_url": "https://images.openfoodfacts.org/images/products/376/004/979/8609/front_fr.180.200.jpg",
+    "image_front_url": "https://images.openfoodfacts.org/images/products/376/004/979/8609/front_fr.180.400.jpg",
+    "ingredients_text_fr": "Farine de BLÉ* 41 % , eau, graines de lin brun 6,1 %, graines de lin jaune 6,1 %, graines de tournesol décortiquées 6 %, farine de SEIGLE 5,1 %, gluten de BLÉ, farine d'ORGE maltée torréfiée, levure, extrait de malt d'ORGE, sel, vinaigre, arôme naturel (contient alcool), conservateur : propionate de calcium, jus d'acérola déshydraté. Traces éventuelles de graines de sésame, soja, moutarde et fruits à coque. * Ingrédient issu du commerce équitable français.",
+    "labels_tags_fr": [
+      "Commerce équitable",
+      "Végétarien",
+      "en:Fairtrade International",
+      "en:Nutriscore",
+      "Fragriethiquefrance",
+      "Frblefrancais",
+      "Frtriman",
+      "Highfibres",
+      "Madeinfrance",
+      "Nopalmoil",
+      "Nutriscoregradea",
+      "Sourceoffibre"
+    ],
+    "last_modified_t": 1789553684,
+    "nova_group": 4,
+    "nutriments": {},
+    "nutriscore_grade": "a",
+    "product_name": "Pain de mie grandes tranches Seigle & Graines 500g",
+    "product_name_fr": "Pain de mie grandes tranches Seigle & Graines 500g",
+    "product_quantity": 500,
+    "quantity": "500 g"
+  },
+  "status": 1,
+  "status_verbose": "product found"
+}

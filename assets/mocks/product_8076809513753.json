@@ -1,0 +1,37 @@
+{
+  "code": "8076809513753",
+  "product": {
+    "brands": "Barilla",
+    "categories_tags_fr": [
+      "Condiments",
+      "Sauces",
+      "Sauces pour pâtes",
+      "Sauces Pesto",
+      "en:Cooking Sauces",
+      "Pestos au basilic"
+    ],
+    "code": "8076809513753",
+    "generic_name_fr": "Sauce pesto avec basilic",
+    "image_front_small_url": "https://images.openfoodfacts.org/images/products/807/680/951/3753/front_fr.534.200.jpg",
+    "image_front_url": "https://images.openfoodfacts.org/images/products/807/680/951/3753/front_fr.534.400.jpg",
+    "ingredients_text_fr": "Huile de tournesol, basilic 30%, NOIX DE CAJOU, fromage Parmigiano Reggiano AOP 5% (LAIT), fibre de maïs, lactosérum en poudre (LAIT), sel, protéines de LAIT, arômes naturels (LAIT), huile d'olive vierge extra, sucre, correcteur d'acidité : acide lactique, ail. Peut contenir des traces d'autres FRUITS À COQUE.",
+    "labels_tags_fr": [
+      "Sans gluten",
+      "Sans OGM",
+      "AOP",
+      "Triman",
+      "ISCC Plus",
+      "Produit en Italie"
+    ],
+    "last_modified_t": 1791510157,
+    "nova_group": 4,
+    "nutriments": {},
+    "nutriscore_grade": "e",
+    "product_name": "Barilla PESTO alla GENOVESE",
+    "product_name_fr": "Sauce pesto avec basilic",
+    "product_quantity": 190.0,
+    "quantity": "190 g"
+  },
+  "status": 1,
+  "status_verbose": "product found"
+}

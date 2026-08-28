@@ -1,0 +1,28 @@
+{
+  "code": "6111180000231",
+  "product": {
+    "brands": "",
+    "categories_tags_fr": [
+      "Additifs alimentaires",
+      "levure chimique"
+    ],
+    "code": "6111180000231",
+    "generic_name_fr": "",
+    "image_front_small_url": "https://images.openfoodfacts.org/images/products/611/118/000/0231/front_fr.117.200.jpg",
+    "image_front_url": "https://images.openfoodfacts.org/images/products/611/118/000/0231/front_fr.117.400.jpg",
+    "ingredients_text_fr": "Bicarbonate de sodium, amidon de maïs, pyrophosphate de sodium",
+    "labels_tags_fr": [
+      "Halal"
+    ],
+    "last_modified_t": 1784716071,
+    "nova_group": 4,
+    "nutriments": {},
+    "nutriscore_grade": "not-applicable",
+    "product_name": "levure pâtisserie",
+    "product_name_fr": "levure pâtisserie",
+    "product_quantity": 80,
+    "quantity": "80 g"
+  },
+  "status": 1,
+  "status_verbose": "product found"
+}

@@ -1,0 +1,49 @@
+{
+  "code": "3155250358788",
+  "product": {
+    "brands": "Primevère",
+    "categories_tags_fr": [
+      "Aliments et boissons à base de végétaux",
+      "Aliments d'origine végétale",
+      "Matières grasses",
+      "Produits à tartiner",
+      "Pâtes à tartiner végétales",
+      "Produits à tartiner salés",
+      "Matières grasses végétales",
+      "Matières grasses à tartiner",
+      "Margarines",
+      "Margarines allégées"
+    ],
+    "code": "3155250358788",
+    "generic_name_fr": "Matière grasse à tartiner et à cuire allégée (55% de MG) issue de l'agriculture biologique",
+    "image_front_small_url": "https://images.openfoodfacts.org/images/products/315/525/035/8788/front_fr.170.200.jpg",
+    "image_front_url": "https://images.openfoodfacts.org/images/products/315/525/035/8788/front_fr.170.400.jpg",
+    "ingredients_text_fr": "Huiles végétales biologiques non hydrogénées 54.5% (colza*, palme*), eau, émulsifiant (lécithine de tournesol biologique*), sel, arôme naturel de noix de coco , jus de citron concentré biologique*",
+    "labels_tags_fr": [
+      "en:Sustainable",
+      "Bio",
+      "Bio européen",
+      "Sans conservateurs",
+      "Agriculture non UE",
+      "Huile de palme durable",
+      "100% végétal",
+      "Agriculture UE",
+      "Agriculture UE/Non UE",
+      "FR-BIO-01",
+      "Point Vert",
+      "Fabriqué en France",
+      "AB Agriculture Biologique",
+      "Triman"
+    ],
+    "last_modified_t": 1789394097,
+    "nova_group": 4,
+    "nutriments": {},
+    "nutriscore_grade": "c",
+    "product_name": "Margarine bio doux tartine & cuisson",
+    "product_name_fr": "Margarine bio doux tartine & cuisson",
+    "product_quantity": 250.0,
+    "quantity": "250 g"
+  },
+  "status": 1,
+  "status_verbose": "product found"
+}

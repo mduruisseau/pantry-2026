@@ -1,0 +1,34 @@
+{
+  "code": "3608580065340",
+  "product": {
+    "brands": "Bonne Maman",
+    "categories_tags_fr": [
+      "Petit-déjeuners",
+      "Produits à tartiner",
+      "Produits à tartiner sucrés",
+      "Pâtes à tartiner",
+      "Pâtes à tartiner aux noisettes",
+      "Pâtes à tartiner au chocolat",
+      "Pâtes à tartiner aux noisettes et au cacao"
+    ],
+    "code": "3608580065340",
+    "generic_name_fr": "",
+    "image_front_small_url": "https://images.openfoodfacts.org/images/products/360/858/006/5340/front_fr.8.200.jpg",
+    "image_front_url": "https://images.openfoodfacts.org/images/products/360/858/006/5340/front_fr.8.400.jpg",
+    "ingredients_text_fr": "sucre, _noisettes_ 20%, huiles végétales (tournesol, colza), _lait_ écrémé en poudre, cacao maigre en poudre 5,5%, beurre de cacao, émulsifiant : lécithine de tournesol, extrait de vanille.\n\nPeut contenir d'autres _fruits à coque_.",
+    "labels_tags_fr": [
+      "Sans huile de palme",
+      "Triman"
+    ],
+    "last_modified_t": 1786776187,
+    "nova_group": 4,
+    "nutriments": {},
+    "nutriscore_grade": "e",
+    "product_name": "Pâte à tartiner noisettes et cacao",
+    "product_name_fr": "Pâte à tartiner noisettes et cacao",
+    "product_quantity": 360,
+    "quantity": "360 gram"
+  },
+  "status": 1,
+  "status_verbose": "product found"
+}

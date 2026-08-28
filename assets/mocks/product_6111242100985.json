@@ -1,0 +1,34 @@
+{
+  "code": "6111242100985",
+  "product": {
+    "brands": "Jaouda",
+    "categories_tags_fr": [
+      "Produits laitiers",
+      "Produits fermentés",
+      "Produits laitiers fermentés",
+      "Desserts",
+      "Desserts lactés",
+      "Desserts lactés fermentés",
+      "Fromages blancs - petit suisses et skyr",
+      "Yaourts",
+      "Desserts lactés fermentés nature",
+      "Fromages blancs",
+      "Fromages blancs natures"
+    ],
+    "code": "6111242100985",
+    "generic_name_fr": "",
+    "image_front_small_url": "https://images.openfoodfacts.org/images/products/611/124/210/0985/front_fr.27.200.jpg",
+    "image_front_url": "https://images.openfoodfacts.org/images/products/611/124/210/0985/front_fr.27.400.jpg",
+    "ingredients_text_fr": "lait ecremé, créme, ferments lactiques. Matière grasse: 6% Poids net:90g",
+    "last_modified_t": 1792590552,
+    "nova_group": 1,
+    "nutriments": {},
+    "nutriscore_grade": "b",
+    "product_name": "",
+    "product_name_fr": "بيرلي جودة اخضر",
+    "product_quantity": 80.0,
+    "quantity": "80 g"
+  },
+  "status": 1,
+  "status_verbose": "product found"
+}

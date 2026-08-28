@@ -1,0 +1,37 @@
+{
+  "code": "3046920022651",
+  "product": {
+    "brands": "LINDT SPRUNGLI SAS",
+    "categories_tags_fr": [
+      "Produits fermentés",
+      "Snacks",
+      "Snacks sucrés",
+      "Cacao et dérivés",
+      "Chocolats",
+      "Chocolats noirs",
+      "en:dark-chocolate-bar",
+      "en:dark-chocolate-bar-with-more-than-70-cocoa"
+    ],
+    "code": "3046920022651",
+    "generic_name_fr": "Chocolat noir extra-fin traditionnel",
+    "image_front_small_url": "https://images.openfoodfacts.org/images/products/304/692/002/2651/front_fr.187.200.jpg",
+    "image_front_url": "https://images.openfoodfacts.org/images/products/304/692/002/2651/front_fr.187.400.jpg",
+    "ingredients_text_fr": "Pâte de cacao, sucre, beurre de cacao, vanille.\r\n\r\nPeut contenir des fruits à coque, du lait, du soja et des graines de sésame.",
+    "labels_tags_fr": [
+      "Sans conservateurs",
+      "Fabriqué en France",
+      "Triman",
+      "Lindt & Sprüngli Cacao Farming Program"
+    ],
+    "last_modified_t": 1791256502,
+    "nova_group": 3,
+    "nutriments": {},
+    "nutriscore_grade": "e",
+    "product_name": "Noir Intense",
+    "product_name_fr": "Noir Intense",
+    "product_quantity": 100.0,
+    "quantity": "100 g"
+  },
+  "status": 1,
+  "status_verbose": "product found"
+}

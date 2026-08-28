@@ -1,0 +1,26 @@
+include: package:very_good_analysis/analysis_options.yaml
+
+analyzer:
+  exclude:
+    - "**/*.g.dart"
+    - "**/*.freezed.dart"
+    - build/**
+    - android/**
+    - web/**
+    - ios/**
+    - windows/**
+    - macos/**
+    - linux/**
+
+linter:
+  rules:
+    # Un projet de cours n'est pas une bibliothèque publiée : on n'exige pas
+    # une doc sur chaque membre public.
+    public_member_api_docs: false
+    # Les chaînes affichées sont en français et resteront en dur jusqu'à la
+    # séance 9, qui introduit l'internationalisation.
+    lines_longer_than_80_chars: false
+    # Le pubspec regroupe les dépendances par séance d'introduction, ce qui
+    # vaut mieux ici qu'un ordre alphabétique : on voit d'un coup d'œil ce qui
+    # sert déjà et ce qui attend.
+    sort_pub_dependencies: false

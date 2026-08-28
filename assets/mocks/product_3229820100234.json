@@ -1,0 +1,45 @@
+{
+  "code": "3229820100234",
+  "product": {
+    "brands": "Bjorg",
+    "categories_tags_fr": [
+      "Snacks",
+      "Snacks sucrés",
+      "Biscuits et gâteaux",
+      "Biscuits sucrés & biscuits apéritifs",
+      "biscuits",
+      "Biscuits au chocolat",
+      "Biscuits fourrés",
+      "Biscuits au chocolat noir",
+      "Biscuits sandwich"
+    ],
+    "code": "3229820100234",
+    "generic_name_fr": "goûters fourrés au chocolat noir",
+    "image_front_small_url": "https://images.openfoodfacts.org/images/products/322/982/010/0234/front_fr.246.200.jpg",
+    "image_front_url": "https://images.openfoodfacts.org/images/products/322/982/010/0234/front_fr.246.400.jpg",
+    "ingredients_text_fr": "Farine de blé* 41%, Chocolat noir* 22% (pâte de cacao*, sucre de canne&quot;, beurre de cacao&quot;), Sucre de canne* roux non raffiné, Farine complète de blé* 16%, Huile de tournesol oléique*, Arôme naturel de vanille, Lait écrémé en poudre, Sel de mer, carbonates d'ammonium, carbonates de sodium, gomme d'acacia*, extraits de romarin* Peut contenir du soja, des œufs, des fruits à coque, des graines de sésame et de la moutarde. *Ingrédients biologiques.",
+    "labels_tags_fr": [
+      "Bio",
+      "Bio européen",
+      "Agriculture non UE",
+      "Entreprise B certifiée",
+      "Agriculture UE",
+      "Agriculture UE/Non UE",
+      "FR-BIO-01",
+      "Sans huile de palme",
+      "pur beurre de cacao",
+      "AB Agriculture Biologique",
+      "Farine de blé français"
+    ],
+    "last_modified_t": 1789394133,
+    "nova_group": 4,
+    "nutriments": {},
+    "nutriscore_grade": "d",
+    "product_name": "Fourrés Chocolat Noir",
+    "product_name_fr": "Fourrés Chocolat Noir",
+    "product_quantity": 225.0,
+    "quantity": "225 g"
+  },
+  "status": 1,
+  "status_verbose": "product found"
+}

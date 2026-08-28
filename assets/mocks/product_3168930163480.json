@@ -1,0 +1,49 @@
+{
+  "code": "3168930163480",
+  "product": {
+    "brands": "ALVALLé",
+    "categories_tags_fr": [
+      "Boissons et préparations de boissons",
+      "Aliments et boissons à base de végétaux",
+      "Boissons",
+      "Aliments d'origine végétale",
+      "Aliments à base de fruits et de légumes",
+      "Aliments et boissons à base de légumes",
+      "Plats préparés",
+      "Boissons à base de végétaux",
+      "Soupes",
+      "Boissons aux légumes",
+      "Soupes de légumes",
+      "Soupes froides",
+      "Gaspacho"
+    ],
+    "code": "3168930163480",
+    "generic_name_fr": "Soupe froide de légumes à l'huile d'olive vierge extra (2,2%).",
+    "image_front_small_url": "https://images.openfoodfacts.org/images/products/316/893/016/3480/front_fr.113.200.jpg",
+    "image_front_url": "https://images.openfoodfacts.org/images/products/316/893/016/3480/front_fr.113.400.jpg",
+    "ingredients_text_fr": "Tomate,poivron,concombre,oignon, huile d'olive vierge extra (2,2%),vinaigre de vin,sel,ail,jus de citron,teneur en légumes: 94%",
+    "labels_tags_fr": [
+      "Sans gluten",
+      "Sans conservateurs",
+      "en:FSC",
+      "Point Vert",
+      "Sans additifs",
+      "Sans colorants",
+      "en:Nutriscore",
+      "en:Nutriscore Grade A",
+      "Triman",
+      "Emballage Carbon neutral",
+      "FSC-C081801"
+    ],
+    "last_modified_t": 1789984077,
+    "nova_group": 3,
+    "nutriments": {},
+    "nutriscore_grade": "b",
+    "product_name": "Alvalle Gazpacho l'original",
+    "product_name_fr": "Alvalle Gazpacho l'original",
+    "product_quantity": 1000.0,
+    "quantity": "1L"
+  },
+  "status": 1,
+  "status_verbose": "product found"
+}

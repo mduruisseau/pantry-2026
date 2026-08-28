@@ -1,0 +1,45 @@
+{
+  "code": "7311070032611",
+  "product": {
+    "brands": "KRISPROLLS",
+    "categories_tags_fr": [
+      "Aliments et boissons à base de végétaux",
+      "Aliments d'origine végétale",
+      "Céréales et pommes de terre",
+      "Céréales et dérivés",
+      "Pains",
+      "Biscottes",
+      "Pains grillés",
+      "Petits pains grillés",
+      "Petit pain grillé suédois sans sucre",
+      "Petit-pain-suedois-sans-sucre"
+    ],
+    "code": "7311070032611",
+    "generic_name_fr": "Petits pains suédois au blé complet",
+    "image_front_small_url": "https://images.openfoodfacts.org/images/products/731/107/003/2611/front_fr.103.200.jpg",
+    "image_front_url": "https://images.openfoodfacts.org/images/products/731/107/003/2611/front_fr.103.400.jpg",
+    "ingredients_text_fr": "Farine de blé complet* (62%), farine de blé*, huile de colza*, huile de colza totalement hydrogénée, malt d'orge, levure, sel.",
+    "labels_tags_fr": [
+      "en:Sustainable",
+      "Sans conservateurs",
+      "Source de fibres alimentaires",
+      "Huile de palme durable",
+      "Riche en fibres",
+      "Sans sucre ajouté",
+      "Sans additifs",
+      "Sans huile de palme",
+      "RSPO",
+      "Triman"
+    ],
+    "last_modified_t": 1790576522,
+    "nova_group": 4,
+    "nutriments": {},
+    "nutriscore_grade": "a",
+    "product_name": "KRISPROLLS Complets",
+    "product_name_fr": "Krisprolls complets sans sucres ajoutés",
+    "product_quantity": 425,
+    "quantity": "425 g"
+  },
+  "status": 1,
+  "status_verbose": "product found"
+}

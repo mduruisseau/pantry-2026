@@ -1,0 +1,38 @@
+{
+  "code": "8000500310427",
+  "product": {
+    "brands": "Ferrero Technical Services Srl, Nutella biscuits",
+    "categories_tags_fr": [
+      "Snacks",
+      "Snacks sucrés",
+      "Biscuits et gâteaux",
+      "Biscuits sucrés & biscuits apéritifs",
+      "biscuits",
+      "en:Biscuits/Cookies (Shelf Stable)",
+      "en:Biscotti",
+      "en:Snack dolci"
+    ],
+    "code": "8000500310427",
+    "generic_name_fr": "Biscuit fourré à la pâte à tartiner aux noisettes et au cacao Nutella®",
+    "image_front_small_url": "https://images.openfoodfacts.org/images/products/800/050/031/0427/front_fr.586.200.jpg",
+    "image_front_url": "https://images.openfoodfacts.org/images/products/800/050/031/0427/front_fr.586.400.jpg",
+    "ingredients_text_fr": "Pâte à tartiner aux NOISETTES et au cacao 40% (sucre, huile de palme, NOISETTES 13%**, LAIT écrémé en poudre 8,7%**, cacao maigre 7,4%**, émulsifiants : lécithines [SOJA]; vanilline), farine de FROMENT 32,5%, graisses végétales (palme, palmiste), sucre de canne (contient BLE) 8,5%, LACTOSE, son de BLE, LAIT en poudre, miel, poudres à lever (diphosphate disodique, carbonate acide de sodium, carbonate acide d'ammonium), farine d'ORGE malté, cacao maigre en poudre, sel, extrait en poudre de malt d'ORGE et de maïs, amidon de FROMENT, émulsifiants: lécithines [SOJA]; vanilline.",
+    "labels_tags_fr": [
+      "Végétarien",
+      "Sans gluten",
+      "Sans conservateurs",
+      "Fabriqué en Italie",
+      "Ponto Verde"
+    ],
+    "last_modified_t": 1791077645,
+    "nova_group": 4,
+    "nutriments": {},
+    "nutriscore_grade": "e",
+    "product_name": "Biscuits NUTELLA Biscuits Noisettes et Cacao x22 - 304g",
+    "product_name_fr": "Biscuits NUTELLA Biscuits Noisettes et Cacao x22 - 304g",
+    "product_quantity": 304.0,
+    "quantity": "304 g"
+  },
+  "status": 1,
+  "status_verbose": "product found"
+}

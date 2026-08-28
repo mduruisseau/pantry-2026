@@ -1,0 +1,141 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="760" viewBox="0 0 900 760" font-family="Inter, Roboto, Helvetica, Arial, sans-serif">
+  <style>
+    .bg    { fill: #F7F8F7; }
+    .card  { fill: #FFFFFF; }
+    .frame { fill: #FDFDFB; stroke: #C9CCC8; stroke-width: 1; }
+    .bar   { fill: #DCE8DF; }
+    .muted { fill: #5A6159; }
+    .faint { fill: #8A918A; }
+    .ink   { fill: #191C19; }
+    .rule  { stroke: #DDE1DC; stroke-width: 1; }
+    .dim   { stroke: #B24C3A; stroke-width: 1; }
+    .dimtx { fill: #B24C3A; font-size: 10px; font-family: ui-monospace, Menlo, Consolas, monospace; }
+    .h     { font-size: 13px; font-weight: 700; fill: #191C19; }
+    .spec  { font-size: 11.5px; fill: #2C312C; font-family: ui-monospace, Menlo, Consolas, monospace; }
+    .specm { font-size: 11.5px; fill: #6B726A; font-family: ui-monospace, Menlo, Consolas, monospace; }
+    .chip  { fill: #DCE8DF; }
+  </style>
+
+  <rect width="900" height="760" class="bg"/>
+  <text x="32" y="34" class="h" font-size="15">Pantry · maquette « fiche produit » · séance 2</text>
+  <text x="32" y="52" class="specm">Cible : Chrome, fenêtre étroite. Les mesures sont en pixels logiques.</text>
+
+  <!-- ================= maquette ================= -->
+  <g transform="translate(32,72)">
+    <rect x="0" y="0" width="360" height="648" rx="14" class="frame"/>
+
+    <!-- AppBar -->
+    <path d="M1 14 a13 13 0 0 1 13 -13 h332 a13 13 0 0 1 13 13 v42 h-358 z" class="bar"/>
+    <text x="16" y="37" class="ink" font-size="15" font-weight="600">Fiche produit</text>
+    <g stroke="#191C19" stroke-width="1.6" fill="none" stroke-linecap="round">
+      <path d="M324 27 h14 m-4 -4 l4 4 -4 4"/>
+      <path d="M338 37 h-14 m4 -4 l-4 4 4 4"/>
+    </g>
+
+    <!-- en-tete produit -->
+    <rect x="16" y="72" width="96" height="96" rx="12" class="chip"/>
+    <text x="64" y="130" text-anchor="middle" font-size="38" font-weight="600" fill="#233026">N</text>
+
+    <text x="128" y="92" class="ink" font-size="21" font-weight="600">Noir Intense</text>
+    <text x="128" y="114" class="muted" font-size="14">Lindt</text>
+    <text x="128" y="134" class="faint" font-size="12">100 g</text>
+
+    <line x1="16" y1="192" x2="344" y2="192" class="rule"/>
+
+    <!-- nutri-score -->
+    <text x="16" y="220" class="muted" font-size="12" font-weight="600" letter-spacing="0.6">NUTRI-SCORE</text>
+    <g transform="translate(16,232)">
+      <rect x="0"   y="0" width="36" height="40" rx="6" fill="#038141" opacity="0.28"/>
+      <rect x="40"  y="0" width="36" height="40" rx="6" fill="#85BB2F" opacity="0.28"/>
+      <rect x="80"  y="0" width="36" height="40" rx="6" fill="#FECB02" opacity="0.28"/>
+      <rect x="120" y="0" width="36" height="40" rx="6" fill="#EE8100" opacity="0.28"/>
+      <rect x="160" y="-4" width="44" height="48" rx="7" fill="#E63E11"/>
+      <text x="18"  y="27" text-anchor="middle" font-size="17" font-weight="700" fill="#2E332E">A</text>
+      <text x="58"  y="27" text-anchor="middle" font-size="17" font-weight="700" fill="#2E332E">B</text>
+      <text x="98"  y="27" text-anchor="middle" font-size="17" font-weight="700" fill="#2E332E">C</text>
+      <text x="138" y="27" text-anchor="middle" font-size="17" font-weight="700" fill="#2E332E">D</text>
+      <text x="182" y="28" text-anchor="middle" font-size="21" font-weight="700" fill="#FFFFFF">E</text>
+    </g>
+
+    <line x1="16" y1="300" x2="344" y2="300" class="rule"/>
+
+    <!-- categories -->
+    <text x="16" y="328" class="muted" font-size="12" font-weight="600" letter-spacing="0.6">CATÉGORIES</text>
+    <g transform="translate(16,340)">
+      <rect x="0" y="0" width="132" height="30" rx="15" class="chip"/>
+      <text x="66" y="20" text-anchor="middle" font-size="12.5" fill="#233026">Snacks sucrés</text>
+      <rect x="140" y="0" width="136" height="30" rx="15" class="chip"/>
+      <text x="208" y="20" text-anchor="middle" font-size="12.5" fill="#233026">Chocolats</text>
+    </g>
+
+    <line x1="16" y1="396" x2="344" y2="396" class="rule"/>
+
+    <!-- identite -->
+    <text x="16" y="424" class="muted" font-size="12" font-weight="600" letter-spacing="0.6">CODE-BARRES</text>
+    <text x="16" y="446" class="ink" font-size="14" font-family="ui-monospace, Menlo, Consolas, monospace">3046920022651</text>
+
+    <text x="16" y="486" class="muted" font-size="12" font-weight="600" letter-spacing="0.6">PÉREMPTION</text>
+    <text x="16" y="508" class="faint" font-size="14" font-style="italic">Non renseignée</text>
+
+    <!-- barre de navigation -->
+    <line x1="1" y1="568" x2="359" y2="568" class="rule"/>
+    <rect x="52" y="580" width="76" height="26" rx="13" class="chip"/>
+    <text x="90" y="598" text-anchor="middle" font-size="12" fill="#233026">Fiche</text>
+    <text x="270" y="598" text-anchor="middle" font-size="12" class="muted">Ajouter</text>
+
+    <!-- cotes -->
+    <g class="dim">
+      <line x1="0" y1="60" x2="0" y2="72"/><line x1="-4" y1="72" x2="4" y2="72"/>
+      <line x1="16" y1="180" x2="16" y2="192"/>
+    </g>
+    <text x="-28" y="70" class="dimtx">16</text>
+  </g>
+
+  <!-- ================= specifications ================= -->
+  <g transform="translate(430,72)">
+    <rect x="0" y="0" width="438" height="648" rx="10" class="card" stroke="#E3E6E2"/>
+    <text x="20" y="30" class="h">Spécifications</text>
+
+    <text x="20" y="58"  class="spec" font-weight="700">Espacements</text>
+    <text x="20" y="78"  class="spec">marge horizontale de l'écran · 16</text>
+    <text x="20" y="96"  class="spec">image ↔ bloc texte · 16</text>
+    <text x="20" y="114" class="spec">avant / après un séparateur · 24</text>
+    <text x="20" y="132" class="spec">titre de section ↔ contenu · 8</text>
+    <text x="20" y="150" class="spec">entre deux puces de catégorie · 8</text>
+
+    <text x="20" y="184" class="spec" font-weight="700">Tailles</text>
+    <text x="20" y="204" class="spec">vignette · 96 × 96, rayon 12</text>
+    <text x="20" y="222" class="spec">case Nutri-Score · 36 × 40, rayon 6</text>
+    <text x="20" y="240" class="spec">case sélectionnée · 44 × 48, rayon 7</text>
+    <text x="20" y="258" class="spec">puce de catégorie · hauteur 30</text>
+
+    <text x="20" y="292" class="spec" font-weight="700">Typographie · color roles du thème</text>
+    <text x="20" y="312" class="spec">nom du produit · headlineSmall, w600</text>
+    <text x="20" y="330" class="spec">marque · bodyLarge, onSurfaceVariant</text>
+    <text x="20" y="348" class="spec">quantité · bodySmall, onSurfaceVariant</text>
+    <text x="20" y="366" class="spec">titre de section · labelMedium, w600,</text>
+    <text x="34" y="382" class="spec">majuscules, interlettrage 0.6</text>
+    <text x="20" y="400" class="spec">code-barres · bodyMedium, monospace</text>
+
+    <text x="20" y="434" class="spec" font-weight="700">Couleurs · jamais en dur</text>
+    <text x="20" y="454" class="spec">fonds de puce · secondaryContainer</text>
+    <text x="20" y="472" class="spec">texte sur puce · onSecondaryContainer</text>
+    <text x="20" y="490" class="spec">séparateurs · outlineVariant</text>
+    <text x="20" y="508" class="specm">Le Nutri-Score est la seule exception :</text>
+    <text x="20" y="524" class="specm">ses cinq teintes sont normalisées.</text>
+    <g transform="translate(20,534)">
+      <rect x="0"  y="0" width="52" height="18" fill="#038141"/><text x="26" y="13" text-anchor="middle" font-size="9.5" fill="#fff">038141</text>
+      <rect x="56" y="0" width="52" height="18" fill="#85BB2F"/><text x="82" y="13" text-anchor="middle" font-size="9.5" fill="#fff">85BB2F</text>
+      <rect x="112" y="0" width="52" height="18" fill="#FECB02"/><text x="138" y="13" text-anchor="middle" font-size="9.5" fill="#333">FECB02</text>
+      <rect x="168" y="0" width="52" height="18" fill="#EE8100"/><text x="194" y="13" text-anchor="middle" font-size="9.5" fill="#fff">EE8100</text>
+      <rect x="224" y="0" width="52" height="18" fill="#E63E11"/><text x="250" y="13" text-anchor="middle" font-size="9.5" fill="#fff">E63E11</text>
+    </g>
+
+    <text x="20" y="586" class="spec" font-weight="700">États dégradés · obligatoires</text>
+    <text x="20" y="606" class="spec">sans Nutri-Score · l'échelle disparaît,</text>
+    <text x="34" y="622" class="spec">« Non évalué » en italique atténué</text>
+    <text x="20" y="640" class="spec">sans catégorie · « Aucune catégorie »</text>
+  </g>
+
+  <text x="32" y="742" class="specm">Le rendu doit rester correct pour les six produits mockés, dont plusieurs sont incomplets. La maquette illustre le cas complet ; ce n'est pas le seul cas à traiter.</text>
+</svg>

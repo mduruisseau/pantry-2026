@@ -1,0 +1,41 @@
+{
+  "code": "3228857002344",
+  "product": {
+    "brands": "Harrys",
+    "categories_tags_fr": [
+      "Aliments et boissons à base de végétaux",
+      "Aliments d'origine végétale",
+      "Surgelés",
+      "Céréales et pommes de terre",
+      "Céréales et dérivés",
+      "Pains",
+      "Pains surgelés",
+      "Pains de mie",
+      "Pains complets",
+      "Pains de mie complet"
+    ],
+    "code": "3228857002344",
+    "generic_name_fr": "Pain de mie a la farine complète",
+    "image_front_small_url": "https://images.openfoodfacts.org/images/products/322/885/700/2344/front_fr.129.200.jpg",
+    "image_front_url": "https://images.openfoodfacts.org/images/products/322/885/700/2344/front_fr.129.400.jpg",
+    "ingredients_text_fr": "Farine complète de BLÉ 39,3%, eau, farine de BLÉ 26,7%, huile de colza, fibre de chicorée, arôme (contient alcool), sel, vinaigre, farine de SEIGLE maltée, levure, gluten de BLÉ, levure désactivée, extrait d'acérola. Peut contenir des traces d'OEUFS, SOJA, LAIT, FRUITS À COQUE et GRAINES DE SÉSAME.",
+    "labels_tags_fr": [
+      "Végétarien",
+      "en:Nutriscore",
+      "Source de fibres alimentaires",
+      "Riche en fibres",
+      "Sans sucre ajouté",
+      "en:Nutriscore Grade A"
+    ],
+    "last_modified_t": 1792287457,
+    "nova_group": 4,
+    "nutriments": {},
+    "nutriscore_grade": "b",
+    "product_name": "Pain de mie american sandwich complet sans sucres ajoutés 600g",
+    "product_name_fr": "Pain de mie american sandwich complet sans sucres ajoutés 600g",
+    "product_quantity": 600.0,
+    "quantity": "600 g"
+  },
+  "status": 1,
+  "status_verbose": "product found"
+}

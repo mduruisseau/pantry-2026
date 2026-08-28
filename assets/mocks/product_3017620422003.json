@@ -1,0 +1,39 @@
+{
+  "code": "3017620422003",
+  "product": {
+    "brands": "Nutella, Ferrero",
+    "categories_tags_fr": [
+      "Petit-déjeuners",
+      "Produits à tartiner",
+      "Produits à tartiner sucrés",
+      "en:Confectionary based spreads",
+      "en:Petit-déjeuners",
+      "en:Produits à tartiner",
+      "en:Produits à tartiner sucrés",
+      "en:Pâtes à tartiner",
+      "Goûter",
+      "Nutella",
+      "Nuttela"
+    ],
+    "code": "3017620422003",
+    "generic_name_fr": "Pâte à tartiner aux noisettes et au cacao",
+    "image_front_small_url": "https://images.openfoodfacts.org/images/products/301/762/042/2003/front_fr.1001.200.jpg",
+    "image_front_url": "https://images.openfoodfacts.org/images/products/301/762/042/2003/front_fr.1001.400.jpg",
+    "ingredients_text_fr": "Sucre, huile de palme, NOISETTES 13%, cacao maigre 7,4%, LAIT écrémé en poudre 6,6%, LACTOSERUM en poudre, émulsifiants: lécithines [SOJA), vanilline. Sans gluten.",
+    "labels_tags_fr": [
+      "Végétarien",
+      "Sans gluten",
+      "Triman"
+    ],
+    "last_modified_t": 1792487392,
+    "nova_group": 3,
+    "nutriments": {},
+    "nutriscore_grade": "e",
+    "product_name": "Nutella",
+    "product_name_fr": "Nutella",
+    "product_quantity": 400,
+    "quantity": "400 g e"
+  },
+  "status": 1,
+  "status_verbose": "product found"
+}

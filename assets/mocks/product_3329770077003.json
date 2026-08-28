@@ -1,0 +1,40 @@
+{
+  "code": "3329770077003",
+  "product": {
+    "brands": "Yoplait",
+    "categories_tags_fr": [
+      "Produits laitiers",
+      "Produits fermentés",
+      "Produits laitiers fermentés",
+      "Desserts",
+      "Desserts lactés",
+      "Desserts lactés fermentés",
+      "Fromages blancs - petit suisses et skyr",
+      "Desserts lactés fermentés nature",
+      "en:Skyrs",
+      "Skyrs nature"
+    ],
+    "code": "3329770077003",
+    "generic_name_fr": "",
+    "image_front_small_url": "https://images.openfoodfacts.org/images/products/332/977/007/7003/front_fr.98.200.jpg",
+    "image_front_url": "https://images.openfoodfacts.org/images/products/332/977/007/7003/front_fr.98.400.jpg",
+    "ingredients_text_fr": "Lait écrémé - Lait concentré écrémé - Ferments lactiques.",
+    "labels_tags_fr": [
+      "Lait Français",
+      "Fabriqué en France",
+      "en:Nutriscore",
+      "en:Nutriscore Grade A",
+      "Triman"
+    ],
+    "last_modified_t": 1790419549,
+    "nova_group": 1,
+    "nutriments": {},
+    "nutriscore_grade": "a",
+    "product_name": "Skyr nature 0%",
+    "product_name_fr": "Skyr nature 0%",
+    "product_quantity": 800.0,
+    "quantity": "800 gram"
+  },
+  "status": 1,
+  "status_verbose": "product found"
+}
