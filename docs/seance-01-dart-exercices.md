@@ -7,7 +7,7 @@ terminée.
 Compter cinq à dix minutes par exercice. Les correspondances Kotlin ↔ Dart sont dans
 `dart-pour-devs-kotlin.md`, à garder ouvert dans un onglet.
 
-Les exercices non terminés pendant le bloc peuvent l'être ensuite : le codelab qui suit est
+Les exercices non terminés pendant le bloc peuvent l'être ensuite : le tutoriel qui suit est
 auto-rythmé. **L'exercice 6 est celui à ne pas sauter**, sa structure sert de la séance 4 jusqu'à
 la fin du cours.
 
