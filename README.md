@@ -5,19 +5,19 @@ du M2 informatique. Ce dépôt sert les **points de départ et les corrigés des
 
 ## Version du SDK · épinglée pour l'année
 
-**Flutter 3.47.1** (Dart 3.13.1). Installation par l'**archive officielle**, en suivant
+**Flutter 3.47.8** (Dart 3.13.7). Installation par l'**archive officielle**, en suivant
 [docs.flutter.dev/get-started/install](https://docs.flutter.dev/get-started/install), chemin de
 votre système puis cible **web**.
 
 ```
-https://storage.googleapis.com/flutter_infra_release/releases/stable/linux/flutter_linux_3.47.1-stable.tar.xz
+https://storage.googleapis.com/flutter_infra_release/releases/stable/linux/flutter_linux_3.47.8-stable.tar.xz
 ```
 
 Environ 1,6 Go. Extraction dans un répertoire du compte utilisateur, puis ajout de
 `<répertoire>/flutter/bin` au `PATH` :
 
 ```bash
-tar -xf flutter_linux_3.47.1-stable.tar.xz
+tar -xf flutter_linux_3.47.8-stable.tar.xz
 export PATH="$PWD/flutter/bin:$PATH"
 ```
 

@@ -16,14 +16,14 @@ sont spécifiques aux postes de la faculté.
 
 ## Version
 
-**Flutter 3.47.1 / Dart 3.13.1**, gelée pour toute l'année. Ne pas installer une autre version.
+**Flutter 3.47.8 / Dart 3.13.7**, gelée pour toute l'année. Ne pas installer une autre version.
 
 ```
-https://storage.googleapis.com/flutter_infra_release/releases/stable/linux/flutter_linux_3.47.1-stable.tar.xz
+https://storage.googleapis.com/flutter_infra_release/releases/stable/linux/flutter_linux_3.47.8-stable.tar.xz
 ```
 
-Environ 1,6 Go. Une fois l'installation faite, `flutter --version` doit afficher `Flutter 3.47.1`
-et `Dart 3.13.1`. Une autre version indique une archive prise par le bouton : supprimer le dossier
+Environ 1,6 Go. Une fois l'installation faite, `flutter --version` doit afficher `Flutter 3.47.8`
+et `Dart 3.13.7`. Une autre version indique une archive prise par le bouton : supprimer le dossier
 extrait et recommencer avec l'URL ci-dessus.
 
 ## Prérequis
@@ -51,7 +51,7 @@ Les emplacements sont ceux de la page officielle : le SDK dans `~/develop/flutte
 
 ```bash
 mkdir -p ~/develop
-tar -xf ~/Téléchargements/flutter_linux_3.47.1-stable.tar.xz -C ~/develop/
+tar -xf ~/Téléchargements/flutter_linux_3.47.8-stable.tar.xz -C ~/develop/
 export PATH="$HOME/develop/flutter/bin:$PATH"
 flutter --version
 ```
@@ -70,7 +70,7 @@ Vérification :
 
 ```bash
 which flutter        # doit pointer dans votre répertoire personnel
-flutter --version    # doit afficher 3.47.1
+flutter --version    # doit afficher 3.47.8
 ```
 
 ## Objectif de la séance : une seule commande
@@ -128,6 +128,6 @@ Le téléchargement de l'archive mobilise le réseau de la salle. Deux moyens de
 | `flutter: command not found` après réouverture du terminal | `PATH` non persistant | ajouter la ligne `export` à `~/.bashrc` |
 | `Permission denied` à l'exécution de `flutter` | répertoire monté sans droit d'exécution | extraire ailleurs, signaler à l'enseignant |
 | `flutter --version` affiche `0.0.0-unknown` | installation par `git clone` | recommencer avec l'archive |
-| `flutter --version` affiche une version autre que 3.47.1 | archive prise par le bouton de la page officielle | supprimer le dossier, recommencer avec l'URL de la section Version |
+| `flutter --version` affiche une version autre que 3.47.8 | archive prise par le bouton de la page officielle | supprimer le dossier, recommencer avec l'URL de la section Version |
 | Aucun appareil dans `flutter devices` | Chrome non détecté | renseigner `CHROME_EXECUTABLE` |
 | `flutter pub get` se bloque | proxy sortant | signaler, la configuration proxy sera donnée en séance |
