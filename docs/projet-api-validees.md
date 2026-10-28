@@ -1,7 +1,7 @@
 # API utilisables pour le rendu final
 
 Le rendu final s'appuie sur une API **autre qu'Open Food Facts**. Les API ci-dessous ont été
-vérifiées le 2026-08-27 sur trois critères :
+vérifiées le 2026-08-27, puis le 2026-10-28, sur trois critères :
 
 - **aucune clé d'API** à obtenir ;
 - **CORS ouvert** (`access-control-allow-origin: *`) donc utilisable depuis Chrome, qui reste la
@@ -22,14 +22,12 @@ mêmes critères.
 | API | Domaine | Base |
 |---|---|---|
 | **Open-Meteo** | météo, prévisions, historique | `api.open-meteo.com` |
-| **REST Countries** | pays, drapeaux, langues, monnaies | `restcountries.com` |
 | **Open Library** | livres, auteurs, couvertures, ISBN | `openlibrary.org` |
 | **PokéAPI** | Pokémon, types, évolutions | `pokeapi.co` |
 | **TheMealDB** | recettes de cuisine, ingrédients | `themealdb.com` |
 | **TheCocktailDB** | cocktails, ingrédients | `thecocktaildb.com` |
 | **Wikipedia REST** | articles, résumés, images | `fr.wikipedia.org/api/rest_v1` |
-| **Frankfurter** | taux de change, historique | `api.frankfurter.app` |
-| **Art Institute of Chicago** | œuvres d'art, images haute définition | `api.artic.edu` |
+| **Frankfurter** | taux de change, historique | `api.frankfurter.dev/v1` |
 | **GBIF** | biodiversité, taxonomie, observations | `api.gbif.org` |
 | **Rick and Morty** | personnages, épisodes, lieux | `rickandmortyapi.com` |
 | **Open Trivia DB** | questions de quiz par catégorie | `opentdb.com` |
@@ -47,6 +45,8 @@ Toutes renvoient `access-control-allow-origin: *` et n'exigent aucune clé.
 
 | API | Raison |
 |---|---|
+| **REST Countries** | Depuis octobre 2026, `/v3.1/` redirige vers un fichier statique sans en-tête CORS : la requête échoue dans Chrome. |
+| **Art Institute of Chicago** | Les requêtes reçoivent une page de vérification Cloudflare (`403`) au lieu des données, depuis un terminal comme depuis Chrome. |
 | **Jikan** (MyAnimeList) | Renvoyait `504 Gateway Time-out` lors de la vérification du 2026-08-27. Disponibilité insuffisante pour un rendu noté. |
 | **Open Food Facts** | C'est l'API du fil rouge. Le rendu vérifie une transposition, pas une répétition. |
 
