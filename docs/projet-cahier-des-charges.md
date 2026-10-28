@@ -15,7 +15,7 @@ trois à quatre pages, `RAPPORT.md`.
 | avant la séance 11 | validation d'une API hors de la liste, si l'équipe en choisit une |
 | séance 11 | atelier, revue de code croisée ; en fin de séance, une application qui compile et un écran relié à ses données |
 | séance 12 | atelier, point technique sur un sujet choisi en séance 11 |
-| quelques jours après la séance 12 | dépôt, à la date annoncée en séance 6 |
+| fin février 2027 | dépôt de l'application et du rapport |
 
 Les deux séances d'atelier comptent huit heures. Une équipe qui travaille régulièrement pendant
 ces séances aboutit dans ce temps ; les jours qui suivent servent à finir et à rédiger le rapport.
