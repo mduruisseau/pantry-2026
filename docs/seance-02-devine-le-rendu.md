@@ -11,7 +11,7 @@ Chaque extrait remplace le corps de cette page :
 ```dart
 import 'package:flutter/material.dart';
 
-void main() => runApp(const MaterialApp(
+void main() => runApp(MaterialApp(
       home: Scaffold(body: /* extrait ici */),
     ));
 ```
@@ -146,6 +146,9 @@ des bornes que son parent lui impose.
 Vertical viewport was given unbounded height.
 ```
 
+**Rendu partiel** : le titre s'affiche, la liste non. L'application ne s'arrête pas, l'erreur est
+dans la console.
+
 Une `Column` transmet à ses enfants une hauteur **unbounded** : chacun prend la place qu'il veut,
 la `Column` additionne ensuite. Un `ListView` fait l'inverse : il veut occuper toute la hauteur
 disponible, et a donc besoin d'une borne. Les deux exigences sont incompatibles.
@@ -185,6 +188,8 @@ les bornes reçues, et ce choix dépend d'un paramètre qu'on oublie de lire.
 Incorrect use of ParentDataWidget.
 ```
 
+**Rendu d'apparence normale** : l'écran est orange. L'erreur n'est visible que dans la console.
+
 `Expanded` ne dessine rien : il **annote** son enfant à l'intention du parent, pour lui indiquer
 comment répartir l'espace. Seuls `Row` et `Column` (les `Flex`) savent lire cette annotation. Un
 `Stack` positionne ses enfants tout autrement et ne sait pas quoi en faire.
@@ -192,27 +197,33 @@ comment répartir l'espace. Seuls `Row` et `Column` (les `Flex`) savent lire cet
 Dans un `Stack`, l'équivalent est `Positioned`, qui est l'annotation que celui-ci comprend.
 
 Le message d'erreur nomme le parent attendu. Le lire fait gagner du temps : il désigne le **parent
-immédiat**, pas un ancêtre lointain.
+immédiat**, pas un ancêtre lointain. Un écran juste ne prouve pas un code juste : la console se lit
+même quand le rendu semble correct.
 
 ## F · le débordement se peint sans interrompre
 
 ```
-A RenderFlex overflowed by 393 pixels on the right.
+A RenderFlex overflowed by N pixels on the right.
 ```
 
-Différence avec B et E : **l'application continue de tourner**. Le débordement est signalé par les
-rayures jaunes et noires et par un message dans la console, mais rien ne s'arrête.
+Comme en B et E, **l'application continue de tourner**. Le dépassement est signalé par les rayures
+jaunes et noires et par un message dans la console ; le nombre de pixels dépend de la largeur de la
+fenêtre.
 
 La `Row` transmet une largeur unbounded à ses enfants. Le `Text` demande la largeur de sa ligne
 complète, sans retour à la ligne, ce qui dépasse. La correction est un `Expanded` autour du `Text` :
 il reçoit alors une contrainte tight, et le texte passe à la ligne dans cette largeur.
 
-Retenir la distinction :
+Retenir les quatre cas :
 
-| Symptôme | Nature |
-|---|---|
-| rayures jaunes et noires | dépassement · l'application tourne, la mise en page est fausse |
-| écran rouge, exception | contrainte impossible · le rendu s'arrête |
+| À l'écran | Nature | Exemple |
+|---|---|---|
+| rayures jaunes et noires | dépassement de place | F |
+| une zone non peinte | erreur de layout, contrainte impossible | B |
+| un rendu d'apparence normale | annotation sous le mauvais parent | E |
+| écran rouge | exception levée pendant un `build` | un `null` déréférencé dans `build` |
+
+Dans les quatre cas, le message est dans la console, et il nomme le widget fautif.
 
 ---
 

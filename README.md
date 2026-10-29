@@ -29,8 +29,9 @@ Trois points importants :
 - **Ne pas installer le SDK par `git clone`.** Cette méthode échoue sur les postes de la faculté :
   l'historique du dépôt est volumineux et un clone superficiel empêche la détection de version.
   Utiliser exclusivement l'archive.
-- **`flutter upgrade` n'est pas utilisable** avec une installation par archive. C'est sans
-  conséquence : la version est gelée pour l'année, afin que tous les postes exécutent la même.
+- **Ne jamais lancer `flutter upgrade`.** La commande fonctionne aussi sur une installation par
+  archive, et quitterait la version du cours, gelée pour que tous les postes exécutent la même.
+  `flutter downgrade` y revient.
 - **Le `pubspec.lock` est committé et fait autorité.** Ne pas le supprimer et ne pas exécuter
   `flutter pub upgrade`. Les versions sont figées : la chaîne de génération de code utilisée par ce
   projet n'accepte qu'une plage restreinte de versions.
