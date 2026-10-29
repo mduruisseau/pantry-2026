@@ -22,7 +22,7 @@ mêmes critères.
 | API | Domaine | Base |
 |---|---|---|
 | **Open-Meteo** | météo, prévisions, historique | `api.open-meteo.com` |
-| **Open Library** | livres, auteurs, couvertures, ISBN | `openlibrary.org` |
+| **Open Library** | livres, auteurs, couvertures | `openlibrary.org` |
 | **PokéAPI** | Pokémon, types, évolutions | `pokeapi.co` |
 | **TheMealDB** | recettes de cuisine, ingrédients | `themealdb.com` |
 | **TheCocktailDB** | cocktails, ingrédients | `thecocktaildb.com` |
@@ -30,15 +30,20 @@ mêmes critères.
 | **Frankfurter** | taux de change, historique | `api.frankfurter.dev/v1` |
 | **GBIF** | biodiversité, taxonomie, observations | `api.gbif.org` |
 | **Rick and Morty** | personnages, épisodes, lieux | `rickandmortyapi.com` |
-| **Open Trivia DB** | questions de quiz par catégorie | `opentdb.com` |
 
-Toutes renvoient `access-control-allow-origin: *` et n'exigent aucune clé.
+Toutes renvoient `access-control-allow-origin: *` et n'exigent aucune clé à obtenir. TheMealDB et
+TheCocktailDB placent une clé publique de test, `1`, dans le chemin (`/api/json/v1/1/`), et
+réservent quelques points d'entrée aux abonnés.
+
+Les couvertures d'Open Library se demandent par l'identifiant `cover_i`
+(`covers.openlibrary.org/b/id/<cover_i>-M.jpg`) ou par OLID, jamais par ISBN : par ISBN, 100
+requêtes par adresse IP toutes les cinq minutes, puis `403 Forbidden`.
 
 ## Utilisables avec précaution
 
 | API | Contrainte |
 |---|---|
-| **MusicBrainz** | `User-Agent` identifiant **obligatoire**, et une requête par seconde maximum. Utilisable, mais impose un cache local dès le départ. |
+| **MusicBrainz** | `User-Agent` identifiant **obligatoire**, et une requête par seconde et par adresse IP, donc pour toute la salle. Utilisable, mais impose un cache local dès le départ. |
 | **Nominatim** (OpenStreetMap) | `User-Agent` obligatoire, une requête par seconde, usage intensif proscrit par les conditions. À réserver à du géocodage ponctuel, jamais à de la recherche à la frappe. |
 
 ## Écartée
@@ -48,11 +53,12 @@ Toutes renvoient `access-control-allow-origin: *` et n'exigent aucune clé.
 | **REST Countries** | Depuis octobre 2026, `/v3.1/` redirige vers un fichier statique sans en-tête CORS : la requête échoue dans Chrome. |
 | **Art Institute of Chicago** | Les requêtes reçoivent une page de vérification Cloudflare (`403`) au lieu des données, depuis un terminal comme depuis Chrome. |
 | **Jikan** (MyAnimeList) | Renvoyait `504 Gateway Time-out` lors de la vérification du 2026-08-27. Disponibilité insuffisante pour un rendu noté. |
+| **Open Trivia DB** | Une requête toutes les cinq secondes par adresse IP (code de réponse 5), pour toute la salle. |
 | **Open Food Facts** | C'est l'API du fil rouge. Le rendu vérifie une transposition, pas une répétition. |
 
 ---
 
-## Vérification d'une API hors liste
+## Vérifications avant de retenir une API hors liste
 
 La démarche est celle du cours « évaluer une dépendance » de la séance 8, appliquée à un service.
 

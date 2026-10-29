@@ -1,8 +1,8 @@
 # Rendu final · cahier des charges
 
-Le rendu final reprend ce qui a été construit sur Pantry, sur une **autre API** et avec des
-maquettes libres. Il vaut **80 %** de la note du module. Il se travaille en équipe de deux ou
-trois, principalement pendant les séances 11 et 12.
+Le rendu final reprend ce qui a été vu sur Pantry, sur une **autre API** et avec des maquettes
+libres : une transposition, pas un copier-coller. Il vaut **80 %** de la note du module. Il se
+travaille en équipe de deux ou trois, principalement pendant les séances 11 et 12.
 
 Le rendu comporte deux pièces, dans un même dépôt Git : **l'application**, et un **rapport** de
 trois à quatre pages, `RAPPORT.md`.
@@ -11,14 +11,16 @@ trois à quatre pages, `RAPPORT.md`.
 
 | Moment | Étape |
 |---|---|
-| séance 6 | annonce du rendu, choix de l'équipe et de l'API |
-| avant la séance 11 | validation d'une API hors de la liste, si l'équipe en choisit une |
+| séance 6 | annonce du rendu et remise de la liste des API ; l'équipe et l'API se choisissent d'ici la séance 10 |
+| séance 10 | lancement : équipe définitive, API retenue, dépôt Git créé, enseignant et équipe relectrice ajoutés comme collaborateurs, premier commit avec le projet, le `pubspec.yaml` et le `pubspec.lock` |
+| avant la séance 11 | validation d'une API hors de la liste par l'enseignant, si l'équipe en choisit une |
 | séance 11 | atelier, revue de code croisée ; en fin de séance, une application qui compile et un écran relié à ses données |
 | séance 12 | atelier, point technique sur un sujet choisi en séance 11 |
 | fin février 2027 | dépôt de l'application et du rapport |
 
-Les deux séances d'atelier comptent huit heures. Une équipe qui travaille régulièrement pendant
-ces séances aboutit dans ce temps ; les jours qui suivent servent à finir et à rédiger le rapport.
+Les deux séances d'atelier comptent huit heures, dont cinq heures et demie de travail en équipe ;
+le reste va aux tests, à la revue croisée, au point technique et au bilan. Les semaines qui suivent
+la séance 12, jusqu'au dépôt, servent à finir et à rédiger le rapport.
 
 ## Application
 
@@ -35,6 +37,7 @@ ces séances aboutit dans ce temps ; les jours qui suivent servent à finir et �
 | navigation avec `go_router` | plusieurs écrans |
 | deux plateformes | Android et web |
 | robustesse | l'application ne casse ni sur réseau coupé, ni sur permission refusée, ni sur réponse vide |
+| soin de l'interface | un mode sombre sans couleur en dur, une accessibilité de base : un libellé sur chaque bouton à icône ; noté sur un point |
 
 ### Périmètre
 
@@ -49,7 +52,7 @@ Libres : le sujet, l'API dans la liste, les maquettes, l'identité visuelle.
 - une interface adaptée aux grands écrans ;
 - l'internationalisation ;
 - les liens profonds ;
-- l'accessibilité ;
+- l'accessibilité au-delà de la base : navigation au clavier, parcours complet au lecteur d'écran ;
 - des tests ;
 - une cible desktop.
 
@@ -77,8 +80,8 @@ IP.
 Ce dernier point est le plus important. Une API qui compte ses limites par adresse IP traite toute
 la salle comme un seul client : une équipe qui la sollicite fort bloque les autres.
 
-Une API hors de la liste est possible. Elle doit être validée **avant la séance 11**, sur les mêmes
-trois critères.
+Une API hors de la liste est possible. Elle doit être validée par l'enseignant **avant la séance
+11**, après les cinq vérifications décrites à la fin de la [liste](projet-api-validees.md).
 
 ## Évaluation
 
@@ -100,6 +103,16 @@ tentatives sans délai, multiplie les requêtes de toute l'équipe, et de la sal
 
 **La seconde plateforme se vérifie tôt.** Un paquet sans implémentation web, ou une permission non
 déclarée sur Android, se découvre au lancement sur la plateforme concernée, pas avant.
+
+**Les versions des paquets.** Reprendre, pour les seuls paquets utilisés, les versions du
+`pubspec.yaml` de Pantry : elles sont compatibles entre elles et avec le Flutter des postes.
+Committer le `pubspec.lock`. Un `dependency_overrides` ne règle rien : il reporte le conflit sur
+chaque poste qui clone le dépôt.
+
+**Les réglages qu'un paquet apporte.** Certains plugins exigent un réglage de plateforme, que
+Pantry porte déjà : `compileSdk = 37` et le desugaring dans `android/app/build.gradle.kts`, les
+récepteurs de notifications dans `AndroidManifest.xml`, `drift_worker.js` et `sqlite3.wasm` dans
+`web/` pour Drift. Les commentaires des fichiers Android disent quel paquet les demande.
 
 **`flutter analyze` sans avertissement.** Un dépôt propre se relit plus vite, en revue croisée
 comme à la correction.

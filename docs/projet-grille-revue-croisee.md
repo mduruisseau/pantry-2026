@@ -10,10 +10,14 @@ remplie montre à l'équipe relue ce que la correction regardera.
 
 ## Déroulement
 
-1. Cloner le dépôt de l'équipe relue, `flutter pub get`, puis lancer l'application dans Chrome et
-   sur Android.
-2. Passer chaque critère par la vérification indiquée, dans l'ordre du tableau.
-3. Rendre la grille remplie à l'équipe relue avant la fin de la séance.
+1. Cloner le dépôt de l'équipe relue, `flutter pub get`,
+   `dart run build_runner build --delete-conflicting-outputs`, puis lancer l'application dans
+   Chrome. Un dépôt qui ne versionne pas ses fichiers générés, comme Pantry, ne compile pas sans
+   `build_runner` : un `*.config.dart` ou un `*.freezed.dart` est introuvable.
+2. Passer chaque critère par la vérification indiquée, dans l'ordre du tableau. Le lancement sur
+   Android se fait à la ligne « Seconde plateforme ».
+3. Ajouter la grille remplie en `REVUE.md`, à la racine d'un fork du dépôt relu, et ouvrir une pull
+   request avant la fin de la séance. L'équipe relue la fusionne.
 
 ## Grille
 
@@ -21,11 +25,11 @@ remplie montre à l'équipe relue ce que la correction regardera.
 
 | Critère | Vérification | Constat | Remarque |
 |---|---|---|---|
-| Injection | `grep -rn "getIt" lib/ui` ne renvoie rien | | |
+| Injection | `grep -rnE "getIt|GetIt" lib/ui` ne renvoie rien | | |
 | BLoC | aucune requête ni règle métier dans un `build` ; les écrans émettent des événements | | |
 | Couches | seule la couche `data` importe le client HTTP et lit du JSON | | |
-| Quatre états d'interface | chaque écran montre chargement, erreur, liste vide et données, panne provoquée comprise | | |
-| Robustesse | réseau coupé (mode avion, ou hors ligne dans les DevTools), permission refusée, réponse vide : l'application ne casse pas | | |
+| Quatre états d'interface | chaque écran montre chargement, erreur, liste vide et données ; l'erreur provoquée par le mode hors ligne des DevTools de Chrome ou le mode avion | | |
+| Robustesse | réseau coupé (mode avion, ou hors ligne dans les DevTools), permission refusée si l'application en demande une, réponse vide (une recherche ou une requête sans résultat) : l'application ne casse pas | | |
 | Seconde plateforme | l'application se lance sur le web **et** sur Android | | |
 | Lisibilité | nommage explicite, aucun code mort, `flutter analyze` sans avertissement | | |
 
