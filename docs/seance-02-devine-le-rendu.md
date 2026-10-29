@@ -1,6 +1,6 @@
 # Séance 2 · Devine le rendu
 
-Six extraits de mise en page. Pour chacun : **écrire sa prédiction avant d'exécuter**, puis coller
+Huit extraits de mise en page. Pour chacun : **écrire sa prédiction avant d'exécuter**, puis coller
 le code dans [DartPad](https://dartpad.dev) et comparer.
 
 L'exercice ne porte pas sur le résultat, mais sur l'écart entre le résultat et la prédiction.
@@ -125,9 +125,44 @@ Prédiction : rendu normal, rendu partiel, ou erreur ? ______
 
 ---
 
+## G
+
+```dart
+SizedBox(
+  width: 200,
+  child: ConstrainedBox(
+    constraints: const BoxConstraints(maxWidth: 100),
+    child: Container(height: 50, color: Colors.red),
+  ),
+)
+```
+
+Prédiction : largeur du rectangle rouge ? ______ px
+
+Retirer ensuite le `SizedBox` en gardant le `ConstrainedBox`, et prédire de nouveau : ______ px
+
+---
+
+## H
+
+```dart
+SizedBox(
+  width: 200,
+  height: 200,
+  child: Container(width: 50, height: 50, color: Colors.blue),
+)
+```
+
+Prédiction : taille du carré bleu ? ______
+
+Envelopper ensuite le `Container` dans `Align(alignment: Alignment.bottomRight, child: …)`, et
+prédire de nouveau : taille et position du carré bleu ? ______
+
+---
+
 # Explications
 
-*À lire après avoir exécuté les six extraits.*
+*À lire après avoir exécuté les huit extraits.*
 
 ## A · la contrainte du parent l'emporte
 
@@ -225,6 +260,36 @@ Retenir les quatre cas :
 
 Dans les quatre cas, le message est dans la console, et il nomme le widget fautif.
 
+## G · un `ConstrainedBox` reste dans les bornes du parent
+
+**Largeur obtenue : 200 px**, pas 100. Sans le `SizedBox` : **100 px**.
+
+`ConstrainedBox` n'impose pas ses bornes : il les combine avec celles qu'il reçoit, et celles du
+parent l'emportent (`BoxConstraints.enforce`). Sous `SizedBox(width: 200)`, la largeur reçue est
+tight à 200 : le `maxWidth: 100` est ramené à 200, sans avertissement.
+
+Sans le `SizedBox`, le `Scaffold` transmet une contrainte loose, de 0 à la largeur de la fenêtre. Le
+`ConstrainedBox` la resserre de 0 à 100, et le `Container`, qui n'a ni enfant ni largeur, prend le
+maximum : 100 px.
+
+L'extrait A suit le même mécanisme : `Container(width: 300)` pose en interne un `ConstrainedBox`
+(`BoxConstraints.tightFor(width: 300)`), que la contrainte tight du parent rend inopérant.
+
+## H · `Align` relâche la contrainte
+
+**Sans `Align` : 200 × 200**, la demande de 50 × 50 est ignorée, comme en A.
+
+**Avec `Align` : 50 × 50, dans le coin inférieur droit** du carré de 200, décalé de 150 px sur
+chaque axe. L'`Align` lui-même mesure 200 × 200.
+
+`Align` reçoit la contrainte tight du `SizedBox` et prend toute la place permise. Il transmet à son
+enfant la même contrainte relâchée (`constraints.loosen()`), de 0 à 200 sur chaque axe : le
+`Container` obtient la taille qu'il demande, et `Align` le place selon `alignment`.
+
+`Center` est un `Align` dont l'alignement vaut `Alignment.center` : c'est la contrainte loose de
+l'extrait D. Pour libérer un enfant d'une contrainte tight, il faut un widget intermédiaire qui la
+relâche ; aucun réglage de l'enfant n'y suffit.
+
 ---
 
 ## À retenir
@@ -233,9 +298,10 @@ Dans les quatre cas, le message est dans la console, et il nomme le widget fauti
 >
 > Les contraintes descendent. Les tailles remontent. Le parent positionne.
 
-- Un parent peut **imposer** une taille (contrainte `tight`, A et C) ou **laisser le choix**
-  (contrainte `loose`, D).
-- Un enfant choisit sa taille **dans** les bornes reçues, jamais en dehors.
+- Un parent peut **imposer** une taille (contrainte `tight`, A, C et G) ou **laisser le choix**
+  (contrainte `loose`, D et H).
+- Un enfant choisit sa taille **dans** les bornes reçues, jamais en dehors. Un `ConstrainedBox`
+  resserre les bornes sans pouvoir les élargir (G) ; `Align` et `Center` les relâchent (H).
 - Une contrainte `unbounded` transmise à un widget qui en exige une bounded est une erreur, pas une
   approximation (B).
 - Certains widgets ne dessinent rien : ils annotent, et n'ont de sens que sous le bon parent (E).

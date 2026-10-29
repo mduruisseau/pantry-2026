@@ -26,7 +26,7 @@ ces séances aboutit dans ce temps ; les jours qui suivent servent à finir et �
 
 | Exigence | Précision |
 |---|---|
-| une API distante autre qu'Open Food Facts | prise dans `docs/projet-api-validees.md`, ou validée avant la séance 11 |
+| une API distante autre qu'Open Food Facts | prise dans la [liste des API](projet-api-validees.md), ou validée avant la séance 11 |
 | les quatre états d'interface | chargement, données, erreur, vide, sur chaque écran qui attend une donnée |
 | persistance locale | au minimum des préférences et un cache |
 | gestion d'état avec BLoC | aucune requête ni règle métier dans un `build` |
@@ -70,7 +70,7 @@ Trois à quatre pages, en Markdown, versionnées à la racine du dépôt sous le
 
 ## Choix de l'API
 
-Les API de `docs/projet-api-validees.md` n'exigent aucune clé, acceptent les requêtes depuis
+Les API de la [liste](projet-api-validees.md) n'exigent aucune clé, acceptent les requêtes depuis
 Chrome, et ont des limites de débit compatibles avec une salle entière derrière une seule adresse
 IP.
 
@@ -84,13 +84,14 @@ trois critères.
 
 | Poids | Modalité |
 |---|---|
-| **80 %** | le rendu final, application et rapport, noté selon `docs/projet-grille-evaluation.md` |
+| **80 %** | le rendu final, application et rapport, noté selon la [grille de notation](projet-grille-evaluation.md) |
 | **20 %** | le contrôle continu : les livrables de TP de quatre séances tirées au sort après la séance 10, validés si les critères de l'exercice prioritaire sont atteints (section « Rendu » de chaque `TP.md`) |
 
 La note du rendu est une note d'équipe, la même pour chacun de ses membres.
 
-La revue de code croisée de la séance 11 suit `docs/projet-grille-revue-croisee.md`. Ses critères
-sont ceux de la grille de notation : elle montre à chaque équipe ce que la correction regardera.
+La revue de code croisée de la séance 11 suit la
+[grille de revue croisée](projet-grille-revue-croisee.md). Ses critères sont ceux de la grille de
+notation : elle montre à chaque équipe ce que la correction regardera.
 
 ## Points d'attention
 

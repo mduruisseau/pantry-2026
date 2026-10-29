@@ -5,24 +5,15 @@ du M2 informatique. Ce dépôt sert les **points de départ et les corrigés des
 
 ## Version du SDK · épinglée pour l'année
 
-**Flutter 3.47.8** (Dart 3.13.7). Installation par l'**archive officielle**, en suivant
-[docs.flutter.dev/get-started/install](https://docs.flutter.dev/get-started/install), chemin de
-votre système puis cible **web**.
+**Flutter 3.47.8** (Dart 3.13.7), installé par l'**archive officielle** :
 
 ```
 https://storage.googleapis.com/flutter_infra_release/releases/stable/linux/flutter_linux_3.47.8-stable.tar.xz
 ```
 
-Environ 1,6 Go. Extraction dans un répertoire du compte utilisateur, puis ajout de
-`<répertoire>/flutter/bin` au `PATH` :
-
-```bash
-tar -xf flutter_linux_3.47.8-stable.tar.xz
-export PATH="$PWD/flutter/bin:$PATH"
-```
-
-Cette ligne `export` ne vaut que pour le terminal courant. Pour qu'elle persiste, l'ajouter au
-fichier de configuration du shell (`~/.bashrc` ou `~/.zshrc`), puis ouvrir un nouveau terminal.
+La procédure est celle de la documentation officielle, complétée par
+[docs/installation.md](https://github.com/mduruisseau/pantry-2026/blob/main/docs/installation.md) :
+emplacement d'extraction, `PATH`, et ce qui diffère pour la version du cours.
 
 Trois points importants :
 
@@ -123,14 +114,22 @@ déclenche alors aucun téléchargement, et `flutter pub get` est immédiat.
 
 | Branche | Contenu | Publiée |
 |---|---|---|
-| `main` | ce README, rien d'autre | · |
+| `main` | ce README, les documents de `docs/` et les diapositives en PDF | · |
 | `session-NN-start` | point de départ du TP de la séance NN | avant la séance |
 | `session-NN-solution` | corrigé | après la séance |
 | `session-06-getit-manuel` | état intermédiaire du TP 1 de la séance 6 | séance 6 |
-| `session-10-jank` | branche avec quatre problèmes de performance à trouver | séance 10 |
+| `session-11-ressources` | exemples de tests de la séance 11, code des modules de la séance 12 | après la séance 11 |
 
 Les corrigés sont poussés **après** la séance concernée. S'ils n'apparaissent pas, exécuter
 `git fetch` le lendemain.
+
+Sans cloner, l'énoncé et le corrigé d'une séance publiée se lisent à ces adresses, en remplaçant
+`NN` par le numéro de la séance :
+
+```
+https://github.com/mduruisseau/pantry-2026/blob/session-NN-start/TP.md
+https://github.com/mduruisseau/pantry-2026/blob/session-NN-solution/CORRIGE.md
+```
 
 ## Génération de code
 
@@ -146,8 +145,8 @@ obsolète : relancer la commande ci-dessus.
 
 ## Un mot sur l'API
 
-L'application consomme [Open Food Facts](https://world.openfoodfacts.org/data), gratuite et sans
-clé d'API. Elle applique en revanche des **limites de débit par adresse IP**, et l'ensemble de la salle
-partage la même adresse. Les énoncés de TP précisent quand utiliser les données locales plutôt que
-l'API réelle. Ces consignes sont impératives : un dépassement entraîne le bannissement de l'adresse
-IP de l'université.
+À partir de la séance 4, l'application interroge par défaut le service du cours, un miroir
+d'[Open Food Facts](https://world.openfoodfacts.org/data), et non l'API réelle. Celle-ci applique
+des **limites de débit par adresse IP**, et toute la salle partage la même adresse : les énoncés de
+TP précisent quand l'utiliser. Sans réseau, `--dart-define=PANTRY_OFFLINE=true` sert des données
+locales.

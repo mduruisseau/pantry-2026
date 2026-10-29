@@ -4,7 +4,8 @@ Table de correspondance à garder ouverte pendant les premières séances. Elle 
 dans le cours, pas l'intégralité du langage. La référence complète est
 [dart.dev/language](https://dart.dev/language).
 
-Tous les exemples s'exécutent tels quels dans [DartPad](https://dartpad.dev).
+Les exemples qui ont une fonction `main` s'exécutent tels quels dans [DartPad](https://dartpad.dev) ;
+les autres sont des fragments qui illustrent une syntaxe.
 
 ---
 
@@ -53,8 +54,9 @@ late final String valeur = calculCouteux();  // calculCouteux() n'est appelé
                                              // qu'au premier accès
 ```
 
-**Type promotion.** Comme Kotlin, Dart promeut après un test, mais uniquement sur les variables
-locales, jamais sur les champs d'instance.
+**Type promotion.** Comme Kotlin, Dart promeut après un test, mais seulement les variables locales
+et les champs privés `final`. Un champ public, ou `widget.x` dans un `State`, se copie d'abord dans
+une variable locale.
 
 ```dart
 void afficher(String? texte) {
@@ -83,12 +85,15 @@ const pi = 3.14159;                 // ok : littéral
 Les objets `const` identiques sont **partagés**, pas dupliqués :
 
 ```dart
-const a = [1, 2, 3];
-const b = [1, 2, 3];
-print(identical(a, b));   // true
+void main() {
+  const a = [1, 2, 3];
+  const b = [1, 2, 3];
+  print(identical(a, b));   // true
+}
 ```
 
-C'est ce qui rend `const` important en Flutter : un widget `const` n'est pas reconstruit.
+En Flutter, un widget `const` n'est donc pas reconstruit par son parent (séance 2). Un
+`InheritedWidget` qu'il lit, comme `Theme.of`, le reconstruit encore (séance 3).
 
 ---
 
@@ -102,8 +107,8 @@ Dart n'a pas de coroutines. Il a une event loop et un seul thread par isolate.
 | `.await()` | `await` |
 | `Flow<T>` | `Stream<T>` |
 | `collect { }` | `await for` ou `.listen()` |
-| `launch { }` | appel d'une fonction `async` sans `await` |
-| `Dispatchers.IO` | pas d'équivalent : voir `Isolate` |
+| `launch { }` | `unawaited(f())` (`dart:async`) |
+| `Dispatchers.IO` | inutile : les E/S de `dart:io` et `http` sont asynchrones |
 
 ```dart
 Future<String> charger() async {
@@ -118,7 +123,9 @@ void main() async {
 
 **Une fonction `async` renvoie toujours un `Future`**, même si son corps ne contient aucun `await`.
 Oublier le `await` à l'appel ne provoque pas d'erreur : la fonction s'exécute, mais le résultat est
-un `Future` non attendu. C'est la source d'erreur la plus fréquente.
+un `Future` non attendu. Les lints `unawaited_futures` et `discarded_futures`, actifs dans Pantry,
+signalent l'appel laissé seul en instruction ; un `Future` passé en argument ou rangé dans une
+variable leur échappe.
 
 ```dart
 Stream<int> compter() async* {
@@ -128,14 +135,15 @@ Stream<int> compter() async* {
   }
 }
 
-await for (final n in compter()) {
-  print(n);
+void main() async {
+  await for (final n in compter()) {
+    print(n);
+  }
 }
 ```
 
 Il n'y a **pas de structured concurrency** comme dans les coroutines : rien n'annule
-automatiquement un `Future` en cours. L'annulation est explicite, et c'est un vrai sujet en
-séance 4.
+automatiquement un `Future` en cours. L'annulation est explicite ; elle est traitée en séance 4.
 
 ---
 
@@ -185,8 +193,16 @@ class Produit {
 - `this.code` en paramètre affecte directement le champ. Pas de corps de constructeur nécessaire.
 - Les paramètres **nommés** sont entre accolades, les **positionnels optionnels** entre crochets.
 - Pas de `new`.
+- `super.key` en paramètre transmet la valeur au constructeur parent (super-parameter) :
+  `const Tuile({super.key, required this.titre})`.
+- Quand le type attendu est connu, `.center` abrège `MainAxisAlignment.center` (dot shorthand) :
+  `mainAxisAlignment: .center`.
+- `with` applique un **mixin**, absent de Kotlin : des membres ajoutés à une classe en plus de sa
+  superclasse. Kotlin s'en approche par une interface à méthodes par défaut ou par la délégation `by`. Flutter
+  s'en sert pour `SingleTickerProviderStateMixin` (séance 10).
 
-**Constructeurs nommés et `factory`**, Kotlin utilise des fonctions de compagnon, Dart les intègre :
+**Constructeurs nommés et `factory`.** Kotlin passe par des fonctions de `companion object` ; Dart
+les intègre à la classe :
 
 ```dart
 class Produit {
@@ -242,12 +258,16 @@ Types anonymes à plusieurs valeurs, sans déclarer de classe. Kotlin n'a que `P
 ```dart
 (int, String) minEtNom() => (3, 'trois');
 
-final (nombre, nom) = minEtNom();
-
 // avec des champs nommés
 ({double lat, double lon}) position() => (lat: 48.85, lon: 2.35);
-final p = position();
-print(p.lat);
+
+void main() {
+  final (nombre, nom) = minEtNom();
+  print('$nombre $nom');
+
+  final p = position();
+  print(p.lat);
+}
 ```
 
 Utile pour un retour multiple ponctuel. Pour une donnée qui circule dans l'application, une classe
@@ -262,17 +282,15 @@ extension StringUtils on String {
   bool get estVide => trim().isEmpty;
 }
 
-'  '.estVide;   // true
+void main() => print('  '.estVide);   // true
 ```
 
-Même principe qu'en Kotlin. Différence : en Dart, l'extension doit être **importée** pour être
-visible, et deux extensions en conflit produisent une erreur qu'il faut lever explicitement.
+Même principe qu'en Kotlin : une extension déclarée dans une autre bibliothèque s'importe. En cas de
+conflit entre deux extensions, masquer l'une à l'import (`hide`).
 
 ---
 
 ## Absent de Dart
-
-Utile à savoir pour arrêter de le chercher.
 
 | Kotlin | Dart |
 |---|---|
@@ -280,9 +298,8 @@ Utile à savoir pour arrêter de le chercher.
 | `data class` | classe ordinaire, ou `freezed` (séance 4) |
 | `object` (singleton) | variable de premier niveau, ou `static final` |
 | `companion object` | membres `static` |
-| surcharge d'opérateurs arbitraires | seulement une liste fixe d'opérateurs |
 | coroutines, structured concurrency | `Future` / `Stream`, sans annulation automatique |
-| `internal` | rien ; `_` en préfixe rend privé **au fichier**, pas à la classe |
+| `internal` | rien ; `_` en préfixe rend privé **à la bibliothèque**, pas à la classe |
 
 La **cascade** `..` remplace en partie `apply` :
 
@@ -295,6 +312,7 @@ final liste = []
 
 Chaque `..` renvoie l'objet lui-même, et non le résultat de l'appel.
 
-**La visibilité est au niveau du fichier**, pas de la classe : un membre préfixé par `_` est
-accessible depuis tout le fichier, y compris par d'autres classes. C'est ce qui permet aux classes
-`_XxxState` de Flutter d'accéder aux champs privés voisins.
+**La visibilité est au niveau de la bibliothèque**, pas de la classe : un membre préfixé par `_`
+est accessible depuis tout le fichier et les fichiers qu'il déclare par `part`, y compris par
+d'autres classes. Un `_XxxState` lit ainsi les champs privés de la classe voisine, et le code généré
+par `freezed` (séance 4) les membres privés du fichier qui l'inclut.

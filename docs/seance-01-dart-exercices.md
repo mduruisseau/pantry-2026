@@ -5,11 +5,11 @@ DartPad tourne dans le navigateur, et fonctionne donc même si l'installation de
 terminée.
 
 Compter cinq à dix minutes par exercice. Les correspondances Kotlin ↔ Dart sont dans
-`dart-pour-devs-kotlin.md`, à garder ouvert dans un onglet.
+[dart-pour-devs-kotlin.md](dart-pour-devs-kotlin.md), à garder ouvert dans un onglet.
 
-Les exercices non terminés pendant le bloc peuvent l'être ensuite : le tutoriel qui suit est
-auto-rythmé. **L'exercice 6 est celui à ne pas sauter**, sa structure sert de la séance 4 jusqu'à
-la fin du cours.
+Les exercices non terminés pendant le bloc peuvent l'être ensuite : le tutoriel qui suit, décrit
+en fin de document, est auto-rythmé. **L'exercice 6 est celui à ne pas sauter**, sa structure sert
+de la séance 4 jusqu'à la fin du cours.
 
 Pour chaque exercice : le squelette est fourni, la sortie attendue est donnée. Remplacer les `TODO`.
 
@@ -68,7 +68,7 @@ traitée par tour. `Future(...)` alimente la file d'événements ; `.then` sur u
 complété alimente celle des microtasks.
 
 Conséquence pratique : une microtask qui en planifie une autre indéfiniment bloque la file
-d'événements, donc l'interface. Ce n'est pas théorique, c'est une cause de gel d'application.
+d'événements, donc l'interface.
 
 ---
 
@@ -98,7 +98,7 @@ void main() async {
 ```
 
 Ensuite, retirer le `await` devant `fiche('Nutella')` et observer ce qui s'affiche. **Aucune erreur
-n'est levée.** C'est précisément ce qui rend cet oubli difficile à repérer.
+n'est levée.**
 
 **Points d'attention.** Une fonction `async` renvoie toujours un `Future`, même sans `await` dans
 son corps. Un `await` sur un `Future` déjà complété rend lui aussi la main : la suite passe par la
@@ -134,7 +134,7 @@ terminé
 ```
 
 **Points d'attention.** Deux écritures possibles : `await for` avec un `if`, ou `.where(...)` suivi
-d'un `await for`. Les deux sont correctes ; savoir laquelle vous avez utilisée.
+d'un `await for`. Les deux sont correctes ; savoir laquelle a été utilisée.
 
 ---
 
@@ -236,17 +236,39 @@ const c = [1, 2, 3];
 // const d = DateTime.now();
 
 const e = [1, 2, 3];
-print(identical(c, e));   // prédire avant d'exécuter
+
+void main() => print(identical(c, e));   // prédire avant d'exécuter
 ```
 
-`identical` compare les références. Le résultat explique pourquoi `const` compte en Flutter : deux
-widgets `const` identiques sont un seul objet, et un widget `const` n'est pas reconstruit.
+`identical` compare les références. Deux widgets `const` identiques sont un seul objet : le parent
+retrouve la même instance et ne la reconstruit pas (séance 2).
 
 **Record.** Écrire une fonction renvoyant à la fois le minimum, le maximum et la moyenne d'une
 `List<int>`, sans déclarer de classe.
 
 **Extension.** Ajouter à `String` une propriété `estCodeBarres` qui vérifie 13 caractères, tous
-numériques. Elle resservira en séance 2.
+numériques.
 
 **Constructeur `factory`.** Écrire `Produit.depuisJson(Map<String, dynamic>)` qui tolère un champ
 `product_name` absent et retombe sur `'Produit sans nom'`.
+
+---
+
+## Tutoriel officiel · étapes 3 à 8
+
+[docs.flutter.dev/learn/pathway/tutorial](https://docs.flutter.dev/learn/pathway/tutorial), de
+l'étape *Create a Flutter app* à l'étape *Learn about stateful widgets*. L'application construite,
+*Birdle*, est un jeu de type Wordle. Les étapes 9 et suivantes sont facultatives.
+
+- Créer un projet séparé, hors du dépôt du cours, et le lancer par `flutter run -d chrome`.
+- Télécharger `game.dart` à l'étape 4 (bouton *Download file*) et l'enregistrer dans `lib/`.
+- **Garder `import 'package:flutter/material.dart';`** et n'ajouter que `import 'game.dart';`.
+  L'étape 4 affiche `package:material_ui`, le paquet vers lequel Material quitte le SDK. Il est
+  absent d'un projet créé en Flutter 3.47.8 : ne pas l'ajouter.
+
+**Avant la séance 2**
+
+- `flutter run -d chrome` fonctionne.
+- Les étapes 3 à 8 sont terminées.
+- Le [catalogue de widgets](https://docs.flutter.dev/ui/widgets) a été parcouru, et trois ou quatre
+  vidéos *Widget of the Week* regardées : la séance 2 porte sur la mise en page.

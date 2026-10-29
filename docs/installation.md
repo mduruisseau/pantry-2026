@@ -1,7 +1,5 @@
 # Installation de Flutter · addendum
 
-Ce document ne remplace pas la documentation officielle, il la complète.
-
 **La référence est [docs.flutter.dev/install/manual](https://docs.flutter.dev/install/manual)**,
 avec le choix **Linux**. Les points ci-dessous sont ceux qui ne figurent pas dans cette page ou qui
 sont spécifiques aux postes de la faculté.
@@ -71,11 +69,11 @@ droits root, indisponibles sur les postes.
 Vérification :
 
 ```bash
-which flutter        # doit pointer dans votre répertoire personnel
+which flutter        # doit pointer dans le répertoire personnel
 flutter --version    # doit afficher 3.47.8
 ```
 
-## Objectif de la séance : une seule commande
+## Critère de réussite
 
 ```bash
 flutter devices      # Chrome doit apparaître
@@ -83,7 +81,7 @@ flutter create demo && cd demo && flutter run -d chrome
 ```
 
 Si cette dernière commande ouvre un navigateur affichant un compteur, l'installation est terminée.
-**Rien d'autre n'est requis aujourd'hui.**
+**Aucune autre installation n'est requise avant la séance 8.**
 
 ## Lire la sortie de `flutter doctor`
 
@@ -92,7 +90,7 @@ lignes suivantes sont **sans conséquence** pour les séances 1 à 7 :
 
 | Ligne | Statut |
 |---|---|
-| `Android toolchain` | présente sur les postes de la salle, souvent absente sur une machine personnelle · sans effet avant la séance 8 |
+| `Android toolchain` | présente sur les postes de la salle, souvent absente sur une machine personnelle ; sans effet avant la séance 8 |
 | `Android licenses` non acceptées | sans effet avant la séance 8 |
 | `Linux toolchain` (clang, CMake, ninja, GTK) incomplète | la cible desktop est optionnelle |
 | `Android Studio` absent | non utilisé, VS Code suffit |
@@ -132,4 +130,4 @@ Le téléchargement de l'archive mobilise le réseau de la salle. Deux moyens de
 | `flutter --version` affiche `0.0.0-unknown` | installation par `git clone` | recommencer avec l'archive |
 | `flutter --version` affiche une version autre que 3.47.8 | archive prise par le bouton de la page officielle | supprimer le dossier, recommencer avec l'URL de la section Version |
 | Aucun appareil dans `flutter devices` | Chrome non détecté | renseigner `CHROME_EXECUTABLE` |
-| `flutter pub get` se bloque | proxy sortant | signaler, la configuration proxy sera donnée en séance |
+| `flutter pub get` se bloque | proxy sortant | signaler à l'enseignant, qui donne les valeurs de `HTTP_PROXY` et `HTTPS_PROXY` du réseau de la salle |
