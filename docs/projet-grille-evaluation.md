@@ -16,3 +16,6 @@ Chaque critère se vérifie sur le dépôt rendu, par la manipulation ou la lect
 | Rapport | 3 | architecture, justification des paquets, problèmes rencontrés ; trois à quatre pages, `RAPPORT.md` |
 | Soin de l'interface | 1 | mode sombre, accessibilité de base |
 | **Total** | **20** | |
+
+Les bonus du cahier des charges compensent au plus deux points perdus ; la note reste plafonnée
+à 20.

@@ -53,6 +53,9 @@ Libres : le sujet, l'API dans la liste, les maquettes, l'identité visuelle.
 - des tests ;
 - une cible desktop.
 
+Les bonus compensent au plus deux points perdus sur la grille de notation ; la note reste
+plafonnée à 20.
+
 ## Rapport
 
 Trois à quatre pages, en Markdown, versionnées à la racine du dépôt sous le nom `RAPPORT.md`.
