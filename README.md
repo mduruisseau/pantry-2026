@@ -43,6 +43,7 @@ Les liens pointent vers `main` : ils fonctionnent depuis n'importe quelle branch
 
 | Document | |
 |---|---|
+| [Diapositives](https://github.com/mduruisseau/pantry-2026/tree/main/docs/slides) | en PDF, publiées avant chaque séance |
 | [Installation](https://github.com/mduruisseau/pantry-2026/blob/main/docs/installation.md) | complément à la documentation officielle |
 | [Kotlin ↔ Dart](https://github.com/mduruisseau/pantry-2026/blob/main/docs/dart-pour-devs-kotlin.md) | correspondances, pour les premières séances |
 | [Exercices DartPad · séance 1](https://github.com/mduruisseau/pantry-2026/blob/main/docs/seance-01-dart-exercices.md) | |
@@ -74,7 +75,7 @@ git switch session-03-start
 Travaillez sur **votre propre branche**, pas sur celles du cours :
 
 ```bash
-git switch -c mon-tp-03
+git switch -c tp03-<votrenom>
 ```
 
 Une branche `-start` est un état initial propre. En cas de retard, de projet devenu inutilisable ou
@@ -82,6 +83,36 @@ d'absence, repartir de la branche de la séance concernée.
 
 **Chaque branche de séance contient un fichier `TP.md`** : l'énoncé complet du TP, rédigé pour être
 suivi de façon autonome.
+
+## Rendre un TP
+
+Ce dépôt est en lecture seule. Le rendu se pousse sur **votre fork**, créé une fois pour l'année
+depuis le bouton **Fork** de cette page, puis déclaré comme second remote :
+
+```bash
+git remote add perso https://github.com/<votre-compte>/pantry-2026.git
+```
+
+En fin de séance :
+
+```bash
+git add -A
+git commit -m "TP 3"
+git push perso tp03-<votrenom>
+```
+
+GitHub refuse le mot de passe du compte pour un push en HTTPS : utiliser un jeton d'accès
+personnel, ou une adresse SSH pour le remote `perso`.
+
+| Règle | Détail |
+|---|---|
+| ce qui compte | 20 % de la note : les livrables de quatre séances, tirées au sort parmi les séances 2 à 10, après la séance 10 |
+| ce qui est vérifié | les critères de l'exercice prioritaire, nommés dans la section « Rendu » du `TP.md` |
+| échéance | le dernier commit poussé avant la fin de la séance |
+| binôme | chacun pousse sur son fork ; un rendu commun est accepté sur demande, branche `tpNN-<nom1>-<nom2>` |
+| absence | une séance tirée et manquée vaut zéro, sauf absence justifiée : une autre séance est alors tirée |
+
+Pousser la branche de départ ou le corrigé ne valide rien. Un fork d'un dépôt public est public.
 
 Le `pubspec.yaml` est **identique sur toutes les branches**, y compris pour des paquets utilisés
 seulement dans les séances ultérieures. Ce choix est volontaire : un changement de branche ne

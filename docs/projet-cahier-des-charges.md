@@ -82,7 +82,7 @@ trois critères.
 | Poids | Modalité |
 |---|---|
 | **80 %** | le rendu final, application et rapport, noté selon `docs/projet-grille-evaluation.md` |
-| **20 %** | le contrôle continu : les livrables de TP de quatre séances tirées au sort, notés sur le fait qu'ils fonctionnent |
+| **20 %** | le contrôle continu : les livrables de TP de quatre séances tirées au sort après la séance 10, validés si les critères de l'exercice prioritaire sont atteints (section « Rendu » de chaque `TP.md`) |
 
 La note du rendu est une note d'équipe, la même pour chacun de ses membres.
 
