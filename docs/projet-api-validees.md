@@ -1,7 +1,7 @@
 # API utilisables pour le rendu final
 
-Le rendu final s'appuie sur une API **autre qu'Open Food Facts**. Les API ci-dessous ont été
-vérifiées le 2026-08-27, puis le 2026-10-28, sur trois critères :
+Le rendu final s'appuie sur une API **autre qu'Open Food Facts**. Les API ci-dessous
+répondent à trois critères :
 
 - **aucune clé d'API** à obtenir ;
 - **CORS ouvert** (`access-control-allow-origin: *`) donc utilisable depuis Chrome, qui reste la
@@ -19,17 +19,17 @@ mêmes critères.
 
 ## Liste validée
 
-| API | Domaine | Base |
-|---|---|---|
-| **Open-Meteo** | météo, prévisions, historique | `api.open-meteo.com` |
-| **Open Library** | livres, auteurs, couvertures | `openlibrary.org` |
-| **PokéAPI** | Pokémon, types, évolutions | `pokeapi.co` |
-| **TheMealDB** | recettes de cuisine, ingrédients | `themealdb.com` |
-| **TheCocktailDB** | cocktails, ingrédients | `thecocktaildb.com` |
-| **Wikipedia REST** | articles, résumés, images | `fr.wikipedia.org/api/rest_v1` |
-| **Frankfurter** | taux de change, historique | `api.frankfurter.dev/v1` |
-| **GBIF** | biodiversité, taxonomie, observations | `api.gbif.org` |
-| **Rick and Morty** | personnages, épisodes, lieux | `rickandmortyapi.com` |
+| API | Domaine | Base | Limite documentée |
+|---|---|---|---|
+| **Open-Meteo** | météo, prévisions, historique | `api.open-meteo.com` | 600 requêtes par minute et 10 000 par jour, par adresse IP, usage non commercial ([conditions](https://open-meteo.com/en/terms)) |
+| **Open Library** | livres, auteurs, couvertures | `openlibrary.org` | une requête par seconde, trois avec un `User-Agent` identifiant ; couvertures ci-dessous ([API](https://openlibrary.org/developers/api)) |
+| **PokéAPI** | Pokémon, types, évolutions | `pokeapi.co` | aucune limite chiffrée ; cache local demandé, adresse IP bannie en cas d'abus ([usage](https://pokeapi.co/docs/v2)) |
+| **TheMealDB** | recettes de cuisine, ingrédients | `themealdb.com` | aucune limite publiée ([API](https://www.themealdb.com/api.php)) |
+| **TheCocktailDB** | cocktails, ingrédients | `thecocktaildb.com` | aucune limite publiée ([API](https://www.thecocktaildb.com/api.php)) |
+| **Wikipedia REST** | articles, résumés, images | `fr.wikipedia.org/api/rest_v1` | 200 requêtes par minute depuis un navigateur sans compte, trois requêtes simultanées ([limites](https://www.mediawiki.org/wiki/Wikimedia_APIs/Rate_limits)) |
+| **Frankfurter** | taux de change, historique | `api.frankfurter.dev/v1` | aucun plafond chiffré, protection contre les abus ([FAQ](https://frankfurter.dev/)) |
+| **GBIF** | biodiversité, taxonomie, observations | `api.gbif.org` | variable selon la charge, `429` au-delà ([limites](https://techdocs.gbif.org/en/openapi/)) |
+| **Rick and Morty** | personnages, épisodes, lieux | `rickandmortyapi.com` | aucune limite publiée ([documentation](https://rickandmortyapi.com/documentation)) |
 
 Toutes renvoient `access-control-allow-origin: *` et n'exigent aucune clé à obtenir. TheMealDB et
 TheCocktailDB placent une clé publique de test, `1`, dans le chemin (`/api/json/v1/1/`), et
@@ -43,8 +43,8 @@ requêtes par adresse IP toutes les cinq minutes, puis `403 Forbidden`.
 
 | API | Contrainte |
 |---|---|
-| **MusicBrainz** | `User-Agent` identifiant **obligatoire**, et une requête par seconde et par adresse IP, donc pour toute la salle. Utilisable, mais impose un cache local dès le départ. |
-| **Nominatim** (OpenStreetMap) | `User-Agent` obligatoire, une requête par seconde, usage intensif proscrit par les conditions. À réserver à du géocodage ponctuel, jamais à de la recherche à la frappe. |
+| **MusicBrainz** | `User-Agent` identifiant **obligatoire**, et une requête par seconde et par adresse IP, donc pour toute la salle ([limites](https://musicbrainz.org/doc/MusicBrainz_API/Rate_Limiting)). Utilisable, mais impose un cache local dès le départ. |
+| **Nominatim** (OpenStreetMap) | `User-Agent` obligatoire, une requête par seconde, usage intensif proscrit par les conditions ([conditions](https://operations.osmfoundation.org/policies/nominatim/)). À réserver à du géocodage ponctuel, jamais à de la recherche à la frappe. |
 
 ## Écartée
 
@@ -52,7 +52,7 @@ requêtes par adresse IP toutes les cinq minutes, puis `403 Forbidden`.
 |---|---|
 | **REST Countries** | Depuis octobre 2026, `/v3.1/` redirige vers un fichier statique sans en-tête CORS : la requête échoue dans Chrome. |
 | **Art Institute of Chicago** | Les requêtes reçoivent une page de vérification Cloudflare (`403`) au lieu des données, depuis un terminal comme depuis Chrome. |
-| **Jikan** (MyAnimeList) | Renvoyait `504 Gateway Time-out` lors de la vérification du 2026-08-27. Disponibilité insuffisante pour un rendu noté. |
+| **Jikan** (MyAnimeList) | Répond par intermittence `504 Gateway Time-out` : disponibilité insuffisante pour un rendu noté. |
 | **Open Trivia DB** | Une requête toutes les cinq secondes par adresse IP (code de réponse 5), pour toute la salle. |
 | **Open Food Facts** | C'est l'API du fil rouge. Le rendu vérifie une transposition, pas une répétition. |
 

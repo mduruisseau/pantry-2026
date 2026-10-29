@@ -12,12 +12,15 @@ remplie montre à l'équipe relue ce que la correction regardera.
 
 1. Cloner le dépôt de l'équipe relue, `flutter pub get`,
    `dart run build_runner build --delete-conflicting-outputs`, puis lancer l'application dans
-   Chrome. Un dépôt qui ne versionne pas ses fichiers générés, comme Pantry, ne compile pas sans
-   `build_runner` : un `*.config.dart` ou un `*.freezed.dart` est introuvable.
+   Chrome, avec les options que donne le `README.md` du dépôt relu. Un dépôt qui ne versionne pas
+   ses fichiers générés, comme Pantry, ne compile pas sans `build_runner` : un `*.config.dart` ou
+   un `*.freezed.dart` est introuvable.
 2. Passer chaque critère par la vérification indiquée, dans l'ordre du tableau. Le lancement sur
    Android se fait à la ligne « Seconde plateforme ».
-3. Ajouter la grille remplie en `REVUE.md`, à la racine d'un fork du dépôt relu, et ouvrir une pull
-   request avant la fin de la séance. L'équipe relue la fusionne.
+3. Ajouter la grille remplie en `REVUE.md`, à la racine, sur une branche `revue` poussée sur le
+   dépôt relu, et ouvrir une pull request avant la fin de la séance. L'équipe relue la fusionne.
+   L'accès en écriture d'un collaborateur ne dispense pas de la pull request : rien ne se pousse
+   sur `main`.
 
 ## Grille
 
@@ -25,6 +28,7 @@ remplie montre à l'équipe relue ce que la correction regardera.
 
 | Critère | Vérification | Constat | Remarque |
 |---|---|---|---|
+| Lancement | après les commandes de l'étape 1, l'application se lance dans Chrome sans erreur ; au moins un écran affiche des données de l'API | | |
 | Injection | `grep -rnE "getIt|GetIt" lib/ui` ne renvoie rien | | |
 | BLoC | aucune requête ni règle métier dans un `build` ; les écrans émettent des événements | | |
 | Couches | seule la couche `data` importe le client HTTP et lit du JSON | | |

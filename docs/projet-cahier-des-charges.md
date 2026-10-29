@@ -12,7 +12,7 @@ trois à quatre pages, `RAPPORT.md`.
 | Moment | Étape |
 |---|---|
 | séance 6 | annonce du rendu et remise de la liste des API ; l'équipe et l'API se choisissent d'ici la séance 10 |
-| séance 10 | lancement : équipe définitive, API retenue, dépôt Git créé, enseignant et équipe relectrice ajoutés comme collaborateurs, premier commit avec le projet, le `pubspec.yaml` et le `pubspec.lock` |
+| séance 10 | lancement : équipe définitive, API retenue, dépôt Git créé, enseignant et équipe relectrice ajoutés comme collaborateurs, invitations acceptées avant la séance 11, premier commit avec le projet, le `pubspec.yaml` et le `pubspec.lock` |
 | avant la séance 11 | validation d'une API hors de la liste par l'enseignant, si l'équipe en choisit une |
 | séance 11 | atelier, revue de code croisée ; en fin de séance, une application qui compile et un écran relié à ses données |
 | séance 12 | atelier, point technique sur un sujet choisi en séance 11 |
@@ -36,7 +36,7 @@ la séance 12, jusqu'au dépôt, servent à finir et à rédiger le rapport.
 | `get_it` et `injectable` | aucun appel au conteneur dans les widgets |
 | navigation avec `go_router` | plusieurs écrans |
 | deux plateformes | Android et web |
-| robustesse | l'application ne casse ni sur réseau coupé, ni sur permission refusée, ni sur réponse vide |
+| robustesse | l'application ne casse ni sur réseau coupé, ni sur le refus d'une permission qu'elle demande, ni sur réponse vide |
 | soin de l'interface | un mode sombre sans couleur en dur, une accessibilité de base : un libellé sur chaque bouton à icône ; noté sur un point |
 
 ### Périmètre
@@ -67,7 +67,9 @@ Trois à quatre pages, en Markdown, versionnées à la racine du dépôt sous le
    donnée depuis l'API jusqu'au widget. Un schéma est le bienvenu.
 2. **Les paquets utilisés, et la raison de chaque choix.** Pour chacun : le problème qu'il résout,
    les solutions comparées, ce qui a fait pencher. Les critères sont ceux du cours de la séance 8 :
-   dernière publication, éditeur, plateformes, score, issues ouvertes, contraintes imposées.
+   dernière publication, éditeur, plateformes, score, issues ouvertes, contraintes imposées. Les
+   paquets imposés par le cahier des charges (`flutter_bloc`, `get_it`, `injectable`, `go_router`)
+   ne se justifient pas.
 3. **Deux ou trois problèmes rencontrés, et leur solution.** Un problème réel, ce qui a été tenté,
    ce qui a fonctionné. Un rapport qui ne rapporte aucune difficulté est incomplet.
 
@@ -97,8 +99,8 @@ nombre de membres de l'équipe.
 relevé en séance 10. Un commit poussé après l'échéance n'est pas regardé.
 
 **Réutilisation de code.** Le code de Pantry peut être repris, en le déclarant dans la partie
-architecture du rapport. Le code d'une autre équipe ne peut pas l'être : la revue croisée donne un
-accès en lecture, pas un droit de copie. Les assistants de code sont autorisés ; leur usage se
+architecture du rapport. Le code d'une autre équipe ne peut pas l'être : l'accès donné pour la revue
+croisée n'est pas un droit de copie. Les assistants de code sont autorisés ; leur usage se
 déclare dans le rapport, et la partie « problèmes rencontrés » reste le travail de l'équipe.
 
 La revue de code croisée de la séance 11 suit la
@@ -122,6 +124,10 @@ chaque poste qui clone le dépôt.
 Pantry porte déjà : `compileSdk = 37` et le desugaring dans `android/app/build.gradle.kts`, les
 récepteurs de notifications dans `AndroidManifest.xml`, `drift_worker.js` et `sqlite3.wasm` dans
 `web/` pour Drift. Les commentaires des fichiers Android disent quel paquet les demande.
+
+**Le lancement décrit dans le `README.md`.** Les commandes qui mènent d'un clone neuf à
+l'application lancée : `flutter pub get`, `build_runner` si les fichiers générés ne sont pas
+versionnés, les `--dart-define` éventuels. La revue croisée et la correction les suivent.
 
 **`flutter analyze` sans avertissement.** Un dépôt propre se relit plus vite, en revue croisée
 comme à la correction.
