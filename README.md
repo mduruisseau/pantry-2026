@@ -149,4 +149,5 @@ obsolète : relancer la commande ci-dessus.
 d'[Open Food Facts](https://world.openfoodfacts.org/data), et non l'API réelle. Celle-ci applique
 des **limites de débit par adresse IP**, et toute la salle partage la même adresse : les énoncés de
 TP précisent quand l'utiliser. Sans réseau, `--dart-define=PANTRY_OFFLINE=true` sert des données
-locales.
+locales. Le service exige un jeton à partir de la séance 6 : une branche antérieure se relance
+alors avec ce même `PANTRY_OFFLINE=true`.

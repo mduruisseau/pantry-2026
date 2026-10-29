@@ -52,7 +52,7 @@ Toutes renvoient `access-control-allow-origin: *` et n'exigent aucune clé.
 
 ---
 
-## Ce qu'il faut vérifier avant de retenir une API hors liste
+## Vérification d'une API hors liste
 
 La démarche est celle du cours « évaluer une dépendance » de la séance 8, appliquée à un service.
 
@@ -73,14 +73,16 @@ La démarche est celle du cours « évaluer une dépendance » de la séance 8, 
 5. **Disponibilité.** Interroger l'API à plusieurs moments de la journée. Un service qui répond
    `504` pendant la vérification répondra `504` pendant la démonstration.
 
-## Une précaution qui vaut pour toutes
+## Précautions communes
 
 Les limites par adresse IP se déclenchent en TP, pas en développement individuel. Deux réflexes
 suffisent à les éviter :
 
 - **`debounce` sur toute recherche à la frappe.** Sans lui, chaque caractère déclenche une requête.
-  Vu en séance 5 avec `bloc_concurrency`.
-- **Cache local des réponses.** Vu en séance 7. Une réponse déjà obtenue ne se redemande pas.
+  Vu en séance 5 : un debounce composé avec `restartable` de `bloc_concurrency`, ou `debounce` de
+  `stream_transform`.
+- **Cache local des réponses.** Vu en séance 7, diapositive « Trois façons de lire hors ligne ». Une
+  réponse déjà obtenue ne se redemande pas.
 
 Ces deux points ne sont pas des optimisations : ce sont les conditions d'utilisation d'une API
 publique.
