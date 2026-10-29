@@ -13,7 +13,7 @@ Chaque critère se vérifie sur le dépôt rendu, par la manipulation ou la lect
 | Les quatre états traités partout | 2 | chargement, erreur, vide et données sur chaque écran qui attend une donnée ; l'erreur provoquée par le mode hors ligne des DevTools de Chrome ou le mode avion |
 | Seconde plateforme | 2 | l'application se lance et fonctionne sur le web **et** sur Android |
 | Robustesse | 2 | réseau coupé (mode avion, ou hors ligne dans les DevTools), permission refusée si l'application en demande une, réponse vide (une recherche ou une requête sans résultat) : l'application ne casse pas |
-| Rapport | 3 | architecture, justification des paquets, problèmes rencontrés ; trois à quatre pages, `RAPPORT.md` |
+| Rapport | 3 | architecture, justification des paquets choisis par l'équipe (pas ceux qu'impose le cahier des charges), problèmes rencontrés ; trois à quatre pages, `RAPPORT.md` |
 | Soin de l'interface | 1 | thème du système passé en sombre : aucun texte illisible ; chaque bouton à icône a un libellé, infobulle ou `Semantics` |
 | **Total** | **20** | |
 
