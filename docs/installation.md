@@ -41,9 +41,11 @@ Le clone échoue sur les postes de la faculté : l'historique du dépôt Flutter
 clone superficiel empêche le SDK de déterminer sa propre version, `flutter --version` renvoie alors
 `0.0.0-unknown` et `flutter doctor` se comporte de façon incohérente.
 
-Conséquence à connaître : **`flutter upgrade` ne fonctionne pas** avec une installation par archive.
-C'est voulu. La version est gelée pour que tous les postes exécutent la même, et une mise à jour en
-cours de semestre casserait la chaîne de génération de code du projet.
+**Ne jamais lancer `flutter upgrade` ni `flutter channel`.** La commande fonctionne aussi sur une
+installation par archive, et quitterait la version du cours : la version est gelée pour que tous les
+postes exécutent la même, et une mise à jour en cours de semestre casserait la chaîne de génération
+de code du projet. Ignorer la bannière de l'outil qui propose une mise à jour. Si `flutter --version`
+affiche autre chose que 3.47.8, `flutter downgrade` revient à la version précédente.
 
 ## Extraction et `PATH` sans droits administrateur
 
