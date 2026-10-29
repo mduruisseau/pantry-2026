@@ -16,7 +16,7 @@ trois à quatre pages, `RAPPORT.md`.
 | avant la séance 11 | validation d'une API hors de la liste par l'enseignant, si l'équipe en choisit une |
 | séance 11 | atelier, revue de code croisée ; en fin de séance, une application qui compile et un écran relié à ses données |
 | séance 12 | atelier, point technique sur un sujet choisi en séance 11 |
-| fin février 2027 | dépôt de l'application et du rapport |
+| fin février 2027 | dépôt de l'application et du rapport ; jour et heure annoncés dès que la date de la séance 12 est connue |
 
 Les deux séances d'atelier comptent huit heures, dont cinq heures et demie de travail en équipe ;
 le reste va aux tests, à la revue croisée, au point technique et au bilan. Les semaines qui suivent
@@ -90,7 +90,16 @@ Une API hors de la liste est possible. Elle doit être validée par l'enseignant
 | **80 %** | le rendu final, application et rapport, noté selon la [grille de notation](projet-grille-evaluation.md) |
 | **20 %** | le contrôle continu : les livrables de TP de quatre séances tirées au sort après la séance 10, validés si les critères de l'exercice prioritaire sont atteints (section « Rendu » de chaque `TP.md`) |
 
-La note du rendu est une note d'équipe, la même pour chacun de ses membres.
+La note du rendu est une note d'équipe, la même pour chacun de ses membres. Elle tient compte du
+nombre de membres de l'équipe.
+
+**Commit noté.** Le dernier commit de la branche `main` poussé avant l'échéance, dans le dépôt
+relevé en séance 10. Un commit poussé après l'échéance n'est pas regardé.
+
+**Réutilisation de code.** Le code de Pantry peut être repris, en le déclarant dans la partie
+architecture du rapport. Le code d'une autre équipe ne peut pas l'être : la revue croisée donne un
+accès en lecture, pas un droit de copie. Les assistants de code sont autorisés ; leur usage se
+déclare dans le rapport, et la partie « problèmes rencontrés » reste le travail de l'équipe.
 
 La revue de code croisée de la séance 11 suit la
 [grille de revue croisée](projet-grille-revue-croisee.md). Ses critères sont ceux de la grille de
