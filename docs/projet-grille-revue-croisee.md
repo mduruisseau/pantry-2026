@@ -11,7 +11,7 @@ remplie montre à l'équipe relue ce que la correction regardera.
 ## Déroulement
 
 1. Cloner le dépôt de l'équipe relue, `flutter pub get`,
-   `dart run build_runner build --delete-conflicting-outputs`, puis lancer l'application dans
+   `dart run build_runner build`, puis lancer l'application dans
    Chrome, avec les options que donne le `README.md` du dépôt relu. Un dépôt qui ne versionne pas
    ses fichiers générés, comme Pantry, ne compile pas sans `build_runner` : un `*.config.dart` ou
    un `*.freezed.dart` est introuvable.
