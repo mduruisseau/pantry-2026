@@ -137,7 +137,7 @@ Plusieurs séances utilisent `freezed`, `json_serializable`, `drift` et `injecta
 (`*.g.dart`, `*.freezed.dart`) **n'est pas committé** : il se régénère.
 
 ```bash
-dart run build_runner build --delete-conflicting-outputs
+dart run build_runner build
 ```
 
 Une erreur inattendue après un changement de branche provient le plus souvent de code généré
