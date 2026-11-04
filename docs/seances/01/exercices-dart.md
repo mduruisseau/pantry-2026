@@ -4,10 +4,11 @@ Six exercices courts, à faire dans l'ordre sur [dartpad.dev](https://dartpad.de
 DartPad tourne dans le navigateur, et fonctionne donc même si l'installation de Flutter n'est pas
 terminée.
 
-Compter cinq à dix minutes par exercice. Les correspondances Kotlin ↔ Dart sont dans
+Les six exercices suivent les explications : 25 minutes pour l'ensemble, puis 10 minutes de
+correction en commun. Les correspondances Kotlin ↔ Dart sont dans
 [dart-pour-devs-kotlin.md](dart-pour-devs-kotlin.md), à garder ouvert dans un onglet.
 
-Les exercices non terminés pendant le bloc peuvent l'être ensuite : le codelab qui suit, décrit
+Les exercices non terminés avant la correction peuvent l'être ensuite : le codelab qui suit, décrit
 en fin de document, est auto-rythmé. **L'exercice 6 est celui à ne pas sauter**, sa structure sert
 de la séance 4 jusqu'à la fin du cours.
 
