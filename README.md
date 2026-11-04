@@ -5,32 +5,24 @@ du M2 informatique. Ce dépôt sert les **points de départ et les corrigés des
 
 ## Version du SDK · épinglée pour l'année
 
-**Flutter 3.47.8** (Dart 3.13.7). Installation par l'**archive officielle**, en suivant
-[docs.flutter.dev/get-started/install](https://docs.flutter.dev/get-started/install), chemin de
-votre système puis cible **web**.
+**Flutter 3.47.8** (Dart 3.13.7), installé par l'**archive officielle** :
 
 ```
 https://storage.googleapis.com/flutter_infra_release/releases/stable/linux/flutter_linux_3.47.8-stable.tar.xz
 ```
 
-Environ 1,6 Go. Extraction dans un répertoire du compte utilisateur, puis ajout de
-`<répertoire>/flutter/bin` au `PATH` :
-
-```bash
-tar -xf flutter_linux_3.47.8-stable.tar.xz
-export PATH="$PWD/flutter/bin:$PATH"
-```
-
-Cette ligne `export` ne vaut que pour le terminal courant. Pour qu'elle persiste, l'ajouter au
-fichier de configuration du shell (`~/.bashrc` ou `~/.zshrc`), puis ouvrir un nouveau terminal.
+La procédure est celle de la documentation officielle, complétée par
+[docs/seances/01/installation.md](https://github.com/mduruisseau/pantry-2026/blob/main/docs/seances/01/installation.md) :
+emplacement d'extraction, `PATH`, et ce qui diffère pour la version du cours.
 
 Trois points importants :
 
 - **Ne pas installer le SDK par `git clone`.** Cette méthode échoue sur les postes de la faculté :
   l'historique du dépôt est volumineux et un clone superficiel empêche la détection de version.
   Utiliser exclusivement l'archive.
-- **`flutter upgrade` n'est pas utilisable** avec une installation par archive. C'est sans
-  conséquence : la version est gelée pour l'année, afin que tous les postes exécutent la même.
+- **Ne jamais lancer `flutter upgrade`.** La commande fonctionne aussi sur une installation par
+  archive, et quitterait la version du cours, gelée pour que tous les postes exécutent la même.
+  `flutter downgrade` y revient.
 - **Le `pubspec.lock` est committé et fait autorité.** Ne pas le supprimer et ne pas exécuter
   `flutter pub upgrade`. Les versions sont figées : la chaîne de génération de code utilisée par ce
   projet n'accepte qu'une plage restreinte de versions.
@@ -43,15 +35,15 @@ Les liens pointent vers `main` : ils fonctionnent depuis n'importe quelle branch
 
 | Document | |
 |---|---|
-| [Diapositives](https://github.com/mduruisseau/pantry-2026/tree/main/docs/slides) | en PDF, publiées avant chaque séance |
-| [Installation](https://github.com/mduruisseau/pantry-2026/blob/main/docs/installation.md) | complément à la documentation officielle |
-| [Kotlin ↔ Dart](https://github.com/mduruisseau/pantry-2026/blob/main/docs/dart-pour-devs-kotlin.md) | correspondances, pour les premières séances |
-| [Exercices DartPad · séance 1](https://github.com/mduruisseau/pantry-2026/blob/main/docs/seance-01-dart-exercices.md) | |
-| [Devine le rendu · séance 2](https://github.com/mduruisseau/pantry-2026/blob/main/docs/seance-02-devine-le-rendu.md) | |
-| [Rendu final · cahier des charges](https://github.com/mduruisseau/pantry-2026/blob/main/docs/projet-cahier-des-charges.md) | annoncé en séance 6 |
-| [Rendu final · API utilisables](https://github.com/mduruisseau/pantry-2026/blob/main/docs/projet-api-validees.md) | sans clé, CORS ouvert, limites compatibles avec la salle |
-| [Rendu final · grille de notation](https://github.com/mduruisseau/pantry-2026/blob/main/docs/projet-grille-evaluation.md) | |
-| [Rendu final · grille de revue croisée](https://github.com/mduruisseau/pantry-2026/blob/main/docs/projet-grille-revue-croisee.md) | séance 11 |
+| [Séances](https://github.com/mduruisseau/pantry-2026/tree/main/docs/seances) | un dossier par séance : diapositives en PDF, publiées avant la séance, et exercices |
+| [Installation](https://github.com/mduruisseau/pantry-2026/blob/main/docs/seances/01/installation.md) | complément à la documentation officielle |
+| [Kotlin ↔ Dart](https://github.com/mduruisseau/pantry-2026/blob/main/docs/seances/01/dart-pour-devs-kotlin.md) | correspondances, pour les premières séances |
+| [Exercices DartPad · séance 1](https://github.com/mduruisseau/pantry-2026/blob/main/docs/seances/01/exercices-dart.md) | |
+| [Devine le rendu · séance 2](https://github.com/mduruisseau/pantry-2026/blob/main/docs/seances/02/devine-le-rendu.md) | |
+| [Rendu final · cahier des charges](https://github.com/mduruisseau/pantry-2026/blob/main/docs/projet/cahier-des-charges.md) | annoncé en séance 6 |
+| [Rendu final · API utilisables](https://github.com/mduruisseau/pantry-2026/blob/main/docs/projet/api-validees.md) | sans clé, CORS ouvert, limites compatibles avec la salle |
+| [Rendu final · grille de notation](https://github.com/mduruisseau/pantry-2026/blob/main/docs/projet/grille-evaluation.md) | |
+| [Rendu final · grille de revue croisée](https://github.com/mduruisseau/pantry-2026/blob/main/docs/projet/grille-revue-croisee.md) | séance 11 |
 
 Les documents des séances suivantes sont ajoutés au fur et à mesure.
 
@@ -122,14 +114,22 @@ déclenche alors aucun téléchargement, et `flutter pub get` est immédiat.
 
 | Branche | Contenu | Publiée |
 |---|---|---|
-| `main` | ce README, rien d'autre | · |
+| `main` | ce README, les documents de `docs/` et les diapositives en PDF | · |
 | `session-NN-start` | point de départ du TP de la séance NN | avant la séance |
 | `session-NN-solution` | corrigé | après la séance |
 | `session-06-getit-manuel` | état intermédiaire du TP 1 de la séance 6 | séance 6 |
-| `session-10-jank` | branche avec quatre problèmes de performance à trouver | séance 10 |
+| `session-11-ressources` | exemples de tests de la séance 11, code des modules de la séance 12 | après la séance 11 |
 
 Les corrigés sont poussés **après** la séance concernée. S'ils n'apparaissent pas, exécuter
 `git fetch` le lendemain.
+
+Sans cloner, l'énoncé et le corrigé d'une séance publiée se lisent à ces adresses, en remplaçant
+`NN` par le numéro de la séance :
+
+```
+https://github.com/mduruisseau/pantry-2026/blob/session-NN-start/TP.md
+https://github.com/mduruisseau/pantry-2026/blob/session-NN-solution/CORRIGE.md
+```
 
 ## Génération de code
 
@@ -137,7 +137,7 @@ Plusieurs séances utilisent `freezed`, `json_serializable`, `drift` et `injecta
 (`*.g.dart`, `*.freezed.dart`) **n'est pas committé** : il se régénère.
 
 ```bash
-dart run build_runner build --delete-conflicting-outputs
+dart run build_runner build
 ```
 
 Une erreur inattendue après un changement de branche provient le plus souvent de code généré
@@ -145,8 +145,9 @@ obsolète : relancer la commande ci-dessus.
 
 ## Un mot sur l'API
 
-L'application consomme [Open Food Facts](https://world.openfoodfacts.org/data), gratuite et sans
-clé d'API. Elle applique en revanche des **limites de débit par adresse IP**, et l'ensemble de la salle
-partage la même adresse. Les énoncés de TP précisent quand utiliser les données locales plutôt que
-l'API réelle. Ces consignes sont impératives : un dépassement entraîne le bannissement de l'adresse
-IP de l'université.
+À partir de la séance 4, l'application interroge par défaut le service du cours, un miroir
+d'[Open Food Facts](https://world.openfoodfacts.org/data), et non l'API réelle. Celle-ci applique
+des **limites de débit par adresse IP**, et toute la salle partage la même adresse : les énoncés de
+TP précisent quand l'utiliser. Sans réseau, `--dart-define=PANTRY_OFFLINE=true` sert des données
+locales. Le service exige un jeton à partir de la séance 6 : une branche antérieure se relance
+alors avec ce même `PANTRY_OFFLINE=true`.
