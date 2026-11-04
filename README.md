@@ -12,7 +12,7 @@ https://storage.googleapis.com/flutter_infra_release/releases/stable/linux/flutt
 ```
 
 La procédure est celle de la documentation officielle, complétée par
-[docs/installation.md](https://github.com/mduruisseau/pantry-2026/blob/main/docs/installation.md) :
+[docs/seances/01/installation.md](https://github.com/mduruisseau/pantry-2026/blob/main/docs/seances/01/installation.md) :
 emplacement d'extraction, `PATH`, et ce qui diffère pour la version du cours.
 
 Trois points importants :
@@ -35,15 +35,15 @@ Les liens pointent vers `main` : ils fonctionnent depuis n'importe quelle branch
 
 | Document | |
 |---|---|
-| [Diapositives](https://github.com/mduruisseau/pantry-2026/tree/main/docs/slides) | en PDF, publiées avant chaque séance |
-| [Installation](https://github.com/mduruisseau/pantry-2026/blob/main/docs/installation.md) | complément à la documentation officielle |
-| [Kotlin ↔ Dart](https://github.com/mduruisseau/pantry-2026/blob/main/docs/dart-pour-devs-kotlin.md) | correspondances, pour les premières séances |
-| [Exercices DartPad · séance 1](https://github.com/mduruisseau/pantry-2026/blob/main/docs/seance-01-dart-exercices.md) | |
-| [Devine le rendu · séance 2](https://github.com/mduruisseau/pantry-2026/blob/main/docs/seance-02-devine-le-rendu.md) | |
-| [Rendu final · cahier des charges](https://github.com/mduruisseau/pantry-2026/blob/main/docs/projet-cahier-des-charges.md) | annoncé en séance 6 |
-| [Rendu final · API utilisables](https://github.com/mduruisseau/pantry-2026/blob/main/docs/projet-api-validees.md) | sans clé, CORS ouvert, limites compatibles avec la salle |
-| [Rendu final · grille de notation](https://github.com/mduruisseau/pantry-2026/blob/main/docs/projet-grille-evaluation.md) | |
-| [Rendu final · grille de revue croisée](https://github.com/mduruisseau/pantry-2026/blob/main/docs/projet-grille-revue-croisee.md) | séance 11 |
+| [Séances](https://github.com/mduruisseau/pantry-2026/tree/main/docs/seances) | un dossier par séance : diapositives en PDF, publiées avant la séance, et exercices |
+| [Installation](https://github.com/mduruisseau/pantry-2026/blob/main/docs/seances/01/installation.md) | complément à la documentation officielle |
+| [Kotlin ↔ Dart](https://github.com/mduruisseau/pantry-2026/blob/main/docs/seances/01/dart-pour-devs-kotlin.md) | correspondances, pour les premières séances |
+| [Exercices DartPad · séance 1](https://github.com/mduruisseau/pantry-2026/blob/main/docs/seances/01/exercices-dart.md) | |
+| [Devine le rendu · séance 2](https://github.com/mduruisseau/pantry-2026/blob/main/docs/seances/02/devine-le-rendu.md) | |
+| [Rendu final · cahier des charges](https://github.com/mduruisseau/pantry-2026/blob/main/docs/projet/cahier-des-charges.md) | annoncé en séance 6 |
+| [Rendu final · API utilisables](https://github.com/mduruisseau/pantry-2026/blob/main/docs/projet/api-validees.md) | sans clé, CORS ouvert, limites compatibles avec la salle |
+| [Rendu final · grille de notation](https://github.com/mduruisseau/pantry-2026/blob/main/docs/projet/grille-evaluation.md) | |
+| [Rendu final · grille de revue croisée](https://github.com/mduruisseau/pantry-2026/blob/main/docs/projet/grille-revue-croisee.md) | séance 11 |
 
 Les documents des séances suivantes sont ajoutés au fur et à mesure.
 
