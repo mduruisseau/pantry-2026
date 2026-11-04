@@ -256,9 +256,8 @@ numériques.
 
 ## Codelab · *Your first Flutter app*
 
-[Your first Flutter app](https://codelabs.developers.google.com/codelabs/flutter-codelab-first),
-étapes 3 à 8, de *Create a project* à *Add a new page*. L'application construite, *Namer*, génère
-des paires de mots et garde des favoris.
+[Your first Flutter app](https://codelabs.developers.google.com/codelabs/flutter-codelab-first).
+L'application construite, *Namer*, génère des paires de mots et garde des favoris.
 
 - Créer un projet séparé, hors du dépôt du cours.
 - Choisir **Chrome** comme cible, dans le sélecteur d'appareil de VS Code ou par
@@ -273,6 +272,6 @@ des paires de mots et garde des favoris.
 **Avant la séance 2**
 
 - `flutter run -d chrome` fonctionne.
-- Les étapes 3 à 8 sont terminées.
+- Le codelab est terminé.
 - Le [catalogue de widgets](https://docs.flutter.dev/ui/widgets) a été parcouru, et trois ou quatre
   vidéos *Widget of the Week* regardées : la séance 2 porte sur la mise en page.
