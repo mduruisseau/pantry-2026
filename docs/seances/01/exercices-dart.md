@@ -7,7 +7,7 @@ terminée.
 Compter cinq à dix minutes par exercice. Les correspondances Kotlin ↔ Dart sont dans
 [dart-pour-devs-kotlin.md](dart-pour-devs-kotlin.md), à garder ouvert dans un onglet.
 
-Les exercices non terminés pendant le bloc peuvent l'être ensuite : le tutoriel qui suit, décrit
+Les exercices non terminés pendant le bloc peuvent l'être ensuite : le codelab qui suit, décrit
 en fin de document, est auto-rythmé. **L'exercice 6 est celui à ne pas sauter**, sa structure sert
 de la séance 4 jusqu'à la fin du cours.
 
@@ -254,17 +254,21 @@ numériques.
 
 ---
 
-## Tutoriel officiel · étapes 3 à 8
+## Codelab · *Your first Flutter app*
 
-[docs.flutter.dev/learn/pathway/tutorial](https://docs.flutter.dev/learn/pathway/tutorial), de
-l'étape *Create a Flutter app* à l'étape *Learn about stateful widgets*. L'application construite,
-*Birdle*, est un jeu de type Wordle. Les étapes 9 et suivantes sont facultatives.
+[Your first Flutter app](https://codelabs.developers.google.com/codelabs/flutter-codelab-first),
+étapes 3 à 8, de *Create a project* à *Add a new page*. L'application construite, *Namer*, génère
+des paires de mots et garde des favoris.
 
-- Créer un projet séparé, hors du dépôt du cours, et le lancer par `flutter run -d chrome`.
-- Télécharger `game.dart` à l'étape 4 (bouton *Download file*) et l'enregistrer dans `lib/`.
-- **Garder `import 'package:flutter/material.dart';`** et n'ajouter que `import 'game.dart';`.
-  L'étape 4 affiche `package:material_ui`, le paquet vers lequel Material quitte le SDK. Il est
-  absent d'un projet créé en Flutter 3.47.8 : ne pas l'ajouter.
+- Créer un projet séparé, hors du dépôt du cours.
+- Choisir **Chrome** comme cible, dans le sélecteur d'appareil de VS Code ou par
+  `flutter run -d chrome`. Le hot reload y fonctionne en Flutter 3.47.8, contrairement à ce
+  qu'annonce l'étape 2.
+- **Recopier le code affiché sur la page.** Les liens GitHub mènent à une version qui importe
+  `package:material_ui`, le paquet vers lequel Material quitte le SDK. Il est absent d'un projet
+  créé en Flutter 3.47.8 : garder `import 'package:flutter/material.dart';`.
+- Le codelab ajoute deux paquets, `english_words` et `provider`. Le `context.watch` de `provider`
+  revient en séance 5 : `flutter_bloc` le réexporte.
 
 **Avant la séance 2**
 
